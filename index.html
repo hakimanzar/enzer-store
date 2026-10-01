@@ -27,8 +27,8 @@
     .filter-btn.active, .filter-btn:hover { color: var(--white); font-weight: bold; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
     .card { background: var(--dark); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; position: relative; }
-    .productImg { width: 100%; height: 260px; object-fit: cover; background: #222; }
-    .tag { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.8); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 4px 8px; border-radius: 2px; }
+    .productImg { width: 100%; height: 280px; object-fit: cover; background: #222; }
+    .tag { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.8); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 4px 8px; border-radius: 2px; z-index: 2; }
     .info { padding: 16px; display: flex; flex-direction: column; flex-grow: 1; }
     .title { font-size: 14px; font-weight: bold; margin-bottom: 6px; }
     .price { font-size: 15px; color: var(--muted); margin-bottom: 16px; }
@@ -100,14 +100,14 @@
 
   <script>
     const products = [
-      {id:1, name:"T-shirt Performance", price:300, cat:"hommes", tag:"BEST SELLER"},
-      {id:2, name:"Sweat Zippé Tech", price:300, cat:"hommes", tag:"NEW"},
-      {id:3, name:"Legging Sculpt", price:300, cat:"femmes", tag:"BEST SELLER"},
-      {id:4, name:"Short Training", price:300, cat:"hommes", tag:""},
-      {id:5, name:"Brassière Fit", price:300, cat:"femmes", tag:"NEW"},
-      {id:6, name:"Veste Sport", price:300, cat:"femmes", tag:""},
-      {id:7, name:"Sac ENZER Training", price:300, cat:"accessoires", tag:""},
-      {id:8, name:"Casquette Performance", price:300, cat:"accessoires", tag:"NEW"}
+      {id:1, name:"T-shirt Performance", price:300, cat:"hommes", tag:"BEST SELLER", img:"https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500"},
+      {id:2, name:"Sweat Zippé Tech", price:300, cat:"hommes", tag:"NEW", img:"https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=500"},
+      {id:3, name:"Legging Sculpt", price:300, cat:"femmes", tag:"BEST SELLER", img:"https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=500"},
+      {id:4, name:"Short Training", price:300, cat:"hommes", tag:"", img:"https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500"},
+      {id:5, name:"Brassière Fit", price:300, cat:"femmes", tag:"NEW", img:"https://images.unsplash.com/photo-1341033?w=500"},
+      {id:6, name:"Veste Sport", price:300, cat:"femmes", tag:"", img:"https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=500"},
+      {id:7, name:"Sac ENZER Training", price:300, cat:"accessoires", tag:"", img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"},
+      {id:8, name:"Casquette Performance", price:300, cat:"accessoires", tag:"NEW", img:"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500"}
     ];
 
     let cart = [];
@@ -117,7 +117,7 @@
       grid.innerHTML = list.map(p => `
         <article class="card">
           ${p.tag ? `<span class="tag">${p.tag}</span>` : ''}
-          <div class="productImg"></div>
+          <img src="${p.img}" class="productImg" alt="${p.name}">
           <div class="info">
             <div class="title">${p.name}</div>
             <div class="price">${p.price} MAD</div>
