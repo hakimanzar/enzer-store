@@ -1,196 +1,181 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ENZER — Sport • Style • Move</title>
-<meta name="description" content="ENZER — Vêtements de sport pour hommes et femmes. Sport, style et mouvement.">
-<style>
-:root{--black:#080808;--dark:#151515;--white:#f5f5f3;--muted:#a7a7a2;--line:#292929;--accent:#8bc39a}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--black);color:var(--white);line-height:1.45}
-button,input,select{font:inherit}
-a{color:inherit;text-decoration:none}
-.top{background:#101010;border-bottom:1px solid var(--line);padding:9px 5%;display:flex;justify-content:space-between;color:#bbb;font-size:12px}
-header{position:sticky;top:0;z-index:20;background:rgba(8,8,8,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{height:72px;max-width:1200px;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-weight:900;font-size:25px;letter-spacing:3px;display:flex;align-items:center;gap:10px}
-.mark{width:30px;height:30px;display:grid;place-items:center;border:2px solid var(--white);transform:skew(-12deg);font-size:18px;font-weight:900}
-.links{display:flex;gap:26px;font-size:13px;text-transform:uppercase}
-.links a:hover{color:var(--accent)}
-.actions{display:flex;gap:10px;align-items:center}
-.iconbtn{background:none;color:white;border:0;cursor:pointer;font-size:20px}
-.cartCount{background:var(--accent);color:#071008;border-radius:99px;font-size:10px;padding:2px 6px;margin-left:-7px}
-.hero{max-width:1200px;margin:auto;min-height:560px;padding:70px 6%;display:flex;align-items:center;position:relative;overflow:hidden;background:
-radial-gradient(circle at 75% 45%,#3b4a40 0,#1b211e 24%,transparent 48%),
-linear-gradient(120deg,#0b0b0b 35%,#161616 100%);border-bottom:1px solid var(--line)}
-.hero:after{content:"ENZER";position:absolute;right:-40px;bottom:20px;font-size:170px;font-weight:900;letter-spacing:-8px;color:rgba(255,255,255,.025)}
-.heroText{max-width:620px;position:relative;z-index:2}
-.kicker{letter-spacing:4px;font-size:12px;color:var(--accent);font-weight:700;margin-bottom:18px}
-h1{font-size:clamp(52px,9vw,100px);line-height:.86;letter-spacing:-5px;margin-bottom:22px}
-.slogan{font-size:18px;letter-spacing:4px;margin-bottom:18px}
-.hero p{color:#bbb;max-width:500px;margin-bottom:28px}
-.btn{border:1px solid white;background:white;color:#0a0a0a;padding:14px 22px;border-radius:2px;font-weight:800;cursor:pointer;display:inline-block}
-.btn.alt{background:transparent;color:white;margin-left:8px}
-.section{max-width:1200px;margin:auto;padding:70px 24px}
-.sectionHead{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}
-.section h2{font-size:34px;letter-spacing:-1px}
-.muted{color:var(--muted);font-size:14px}
-.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.cat{min-height:190px;padding:20px;display:flex;align-items:end;background:linear-gradient(145deg,#222,#0e0e0e);border:1px solid var(--line);position:relative;overflow:hidden}
-.cat:nth-child(2){background:linear-gradient(145deg,#392d30,#111)}
-.cat:nth-child(3){background:linear-gradient(145deg,#28342d,#111)}
-.cat:nth-child(4){background:linear-gradient(145deg,#252a33,#111)}
-.cat strong{font-size:21px;position:relative;z-index:2}.cat span{display:block;color:#bbb;font-size:12px;margin-top:5px}
-.cat:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.06);right:-45px;top:-45px}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.card{background:#111;border:1px solid var(--line);overflow:hidden}
-.productImg{height:260px;background:linear-gradient(145deg,#2b2b2b,#090909);display:flex;align-items:center;justify-content:center;position:relative}
-.productImg:before{content:"ENZER";font-weight:900;font-size:42px;letter-spacing:5px;color:rgba(255,255,255,.08);transform:rotate(-12deg)}
-.tag{position:absolute;left:10px;top:10px;background:white;color:#111;padding:5px 8px;font-size:10px;font-weight:900}
-.info{padding:14px}.info h3{font-size:14px;margin-bottom:7px}.price{font-weight:900}.stars{color:#aaa;font-size:11px;margin-top:5px}
-.shopbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
-.filter{background:#111;color:white;border:1px solid var(--line);padding:11px 14px}
-.banner{background:linear-gradient(100deg,#141814,#242d27);padding:65px 8%;border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:30px}
-.banner h2{font-size:38px;max-width:580px}
-footer{border-top:1px solid var(--line);padding:45px 6%;color:#aaa}
-.footergrid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}
-footer h3{color:white;margin-bottom:12px}.footlinks{display:grid;gap:8px;font-size:13px}
-.cartPanel,.modal{position:fixed;inset:0;z-index:50;display:none}
-.overlay{position:absolute;inset:0;background:rgba(0,0,0,.72)}
-.panel{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:#111;border-left:1px solid var(--line);padding:24px;overflow:auto}
-.panelHead{display:flex;justify-content:space-between;margin-bottom:25px}.close{background:none;border:0;color:white;font-size:25px;cursor:pointer}
-.cartItem{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:14px 0;gap:10px}
-.qty{display:flex;gap:8px;align-items:center}.qty button{background:#222;color:white;border:0;width:25px;height:25px}
-.total{display:flex;justify-content:space-between;font-size:19px;font-weight:900;margin:22px 0}
-.form{display:grid;gap:12px}.form input,.form select{background:#191919;color:white;border:1px solid #333;padding:13px}
-.form label{font-size:12px;color:#aaa}
-.empty{color:#888;text-align:center;padding:50px 0}
-@media(max-width:800px){.links{display:none}.top{display:none}.nav{padding:0 16px}.hero{min-height:520px;padding:50px 24px}.hero:after{font-size:100px}.categories,.products{grid-template-columns:repeat(2,1fr)}.productImg{height:210px}.banner{display:block}.banner .btn{margin-top:20px}.footergrid{grid-template-columns:1fr 1fr}}
-@media(max-width:500px){.categories,.products{grid-template-columns:1fr 1fr;gap:9px}.productImg{height:170px}.section{padding:45px 15px}.hero{padding:45px 18px}h1{font-size:62px}.btn{padding:12px 15px}.btn.alt{margin-left:0;margin-top:8px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENZER • Sport • Style • Move</title>
+  <meta name="description" content="ENZER - Vêtements de sport pour hommes et femmes. Sport, style et mouvement.">
+  <style>
+    :root { --black: #080808; --dark: #151515; --white: #f5f5f3; --muted: #a7a7a2; --line: #292929; --accent: #8bc39a; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--black); color: var(--white); line-height: 1.45; }
+    a { color: inherit; text-decoration: none; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(8,8,8,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    .topbar { background: #000; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; padding: 8px 16px; text-align: center; border-bottom: 1px solid var(--line); color: var(--muted); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1200px; margin: 0 auto; }
+    .logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+    .links { display: flex; gap: 20px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+    .links a:hover { color: var(--white); }
+    .cart-btn { background: var(--white); color: var(--black); border: none; padding: 8px 14px; font-weight: bold; cursor: pointer; border-radius: 20px; font-size: 12px; }
+    .hero { min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid var(--line); padding: 40px 20px; background: radial-gradient(circle at center, #1a1a1a 0%, #080808 100%); }
+    .hero h1 { font-size: clamp(36px, 8vw, 72px); font-weight: 900; text-transform: uppercase; letter-spacing: 2px; line-height: 1; margin-bottom: 16px; }
+    .hero p { color: var(--muted); max-width: 500px; margin: 0 auto 24px; font-size: 15px; }
+    .hero-btn { display: inline-block; background: var(--white); color: var(--black); font-weight: bold; padding: 12px 28px; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; border-radius: 2px; }
+    .products { max-width: 1200px; margin: 0 auto; padding: 60px 24px; }
+    .filters { display: flex; gap: 12px; margin-bottom: 30px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+    .filter-btn { background: none; border: none; color: var(--muted); font-size: 13px; text-transform: uppercase; cursor: pointer; padding: 4px 8px; }
+    .filter-btn.active, .filter-btn:hover { color: var(--white); font-weight: bold; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
+    .card { background: var(--dark); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; position: relative; }
+    .productImg { width: 100%; height: 260px; object-fit: cover; background: #222; }
+    .tag { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.8); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 4px 8px; border-radius: 2px; }
+    .info { padding: 16px; display: flex; flex-direction: column; flex-grow: 1; }
+    .title { font-size: 14px; font-weight: bold; margin-bottom: 6px; }
+    .price { font-size: 15px; color: var(--muted); margin-bottom: 16px; }
+    .buy-btn { margin-top: auto; width: 100%; padding: 10px; background: transparent; color: var(--white); border: 1px solid var(--line); font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 12px; }
+    .buy-btn:hover { background: var(--white); color: var(--black); }
+    .cart-panel { position: fixed; top: 0; right: -400px; width: 100%; max-width: 360px; height: 100%; background: var(--dark); border-left: 1px solid var(--line); z-index: 100; transition: right 0.3s ease; padding: 24px; display: flex; flex-direction: column; }
+    .cart-panel.open { right: 0; }
+    .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 20px; }
+    .close-btn { background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; }
+    .cart-items { flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
+    .cartItem { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 8px; font-size: 13px; }
+    .cart-footer { border-top: 1px solid var(--line); padding-top: 16px; margin-top: 12px; }
+    .cart-total { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 16px; }
+    .checkout-btn { width: 100%; background: var(--white); color: var(--black); border: none; padding: 12px; font-weight: bold; text-transform: uppercase; cursor: pointer; }
+    footer { border-top: 1px solid var(--line); padding: 40px 24px; text-align: center; color: var(--muted); font-size: 12px; }
+  </style>
 </head>
 <body>
-<div class="top"><span>Livraison partout au Maroc à partir de 50 MAD</span><span>Suivi de commande • Service client</span></div>
-<header>
-<nav class="nav">
-<a class="logo" href="#"><span class="mark">E</span> ENZER</a>
-<div class="links"><a href="#home">Accueil</a><a href="#hommes">Hommes</a><a href="#femmes">Femmes</a><a href="#produits">Produits</a><a href="#nouveautes">Nouveautés</a></div>
-<div class="actions"><button class="iconbtn" onclick="document.getElementById('produits').scrollIntoView()">⌕</button><button class="iconbtn" onclick="openCart()">♧ <span class="cartCount" id="count">0</span></button></div>
-</nav>
-</header>
 
-<main id="home">
-<section class="hero">
-<div class="heroText">
-<div class="kicker">ENZER PERFORMANCE</div>
-<h1>SPORT.<br>STYLE.<br>MOVE.</h1>
-<div class="slogan">MORE THAN SPORTSWEAR.</div>
-<p>Vêtements de sport pour hommes et femmes. Confort, performance et style pour l'entraînement comme pour le quotidien.</p>
-<a class="btn" href="#produits">Découvrir la collection →</a>
-<a class="btn alt" href="#categories">Explorer</a>
-</div>
-</section>
+  <header>
+    <div class="topbar">Livraison partout au Maroc à partir de 50 MAD</div>
+    <div class="nav">
+      <div class="logo">ENZER</div>
+      <div class="links">
+        <a href="#produits">Accueil</a>
+        <a href="#produits">Homme</a>
+        <a href="#produits">Femme</a>
+      </div>
+      <button class="cart-btn" onclick="openCart()">Panier (<span id="count">0</span>)</button>
+    </div>
+  </header>
 
-<section class="section" id="categories">
-<div class="sectionHead"><div><div class="kicker">COLLECTIONS</div><h2>Choisis ton style</h2></div></div>
-<div class="categories">
-<a class="cat" href="#produits" onclick="filterProducts('hommes')"><div><strong>HOMMES<span>Voir la collection →</span></strong></div></a>
-<a class="cat" href="#produits" onclick="filterProducts('femmes')"><div><strong>FEMMES<span>Voir la collection →</span></strong></div></a>
-<a class="cat" href="#produits" onclick="filterProducts('nouveautes')"><div><strong>NOUVEAUTÉS<span>Voir les nouveautés →</span></strong></div></a>
-<a class="cat" href="#produits" onclick="filterProducts('accessoires')"><div><strong>ACCESSOIRES<span>Complète ton look →</span></strong></div></a>
-</div>
-</section>
+  <section class="hero">
+    <div>
+      <h1>SPORT. STYLE. MOVE.</h1>
+      <p>ENZER PERFORMANCE - Vêtements de sport pour hommes et femmes.</p>
+      <a href="#produits" class="hero-btn">Découvrir les produits</a>
+    </div>
+  </section>
 
-<section class="section" id="produits">
-<div class="sectionHead"><div><div class="kicker">ENZER SHOP</div><h2>Meilleures ventes</h2></div></div>
-<div class="shopbar">
-<button class="filter" onclick="filterProducts('all')">Tous</button>
-<button class="filter" onclick="filterProducts('hommes')">Hommes</button>
-<button class="filter" onclick="filterProducts('femmes')">Femmes</button>
-<button class="filter" onclick="filterProducts('accessoires')">Accessoires</button>
-</div>
-<div class="products" id="productGrid"></div>
-</section>
+  <section class="products" id="produits">
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterProducts('all')">Tous</button>
+      <button class="filter-btn" onclick="filterProducts('hommes')">Homme</button>
+      <button class="filter-btn" onclick="filterProducts('femmes')">Femme</button>
+      <button class="filter-btn" onclick="filterProducts('accessoires')">Accessoires</button>
+    </div>
+    <div class="grid" id="productGrid"></div>
+  </section>
 
-<section class="section" id="nouveautes">
-<div class="banner">
-<div><div class="kicker">PERFORMANCE & CONFORT</div><h2>Pour tous vos défis. Pour tous vos mouvements.</h2><p class="muted">Découvre les pièces ENZER pensées pour bouger librement.</p></div>
-<a class="btn" href="#produits" onclick="filterProducts('all')">Shop maintenant →</a>
-</div>
-</section>
-</main>
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>Votre Panier</h3>
+      <button class="close-btn" onclick="closeCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="total">0 MAD</span>
+      </div>
+      <button class="checkout-btn" onclick="submitOrder(event)">Commander via WhatsApp</button>
+    </div>
+  </div>
 
-<footer>
-<div class="footergrid">
-<div><div class="logo"><span class="mark">E</span> ENZER</div><p class="muted" style="margin-top:12px">SPORT • STYLE • MOVE<br>More than sportswear.</p></div>
-<div><h3>Navigation</h3><div class="footlinks"><a href="#home">Accueil</a><a href="#produits">Produits</a><a href="#nouveautes">Nouveautés</a></div></div>
-<div><h3>Catégories</h3><div class="footlinks"><a href="#produits">Hommes</a><a href="#produits">Femmes</a><a href="#produits">Accessoires</a></div></div>
-<div><h3>Contact</h3><div class="footlinks"><span>WhatsApp</span><span>Instagram</span><span>Service client</span></div></div>
-</div>
-<p style="text-align:center;margin-top:40px;font-size:12px">© 2026 ENZER. Tous droits réservés.</p>
-</footer>
+  <footer>
+    <p>&copy; 2026 ENZER Performance. Tous droits réservés.</p>
+  </footer>
 
-<div class="cartPanel" id="cartPanel">
-<div class="overlay" onclick="closeCart()"></div>
-<div class="panel">
-<div class="panelHead"><h2>Mon panier</h2><button class="close" onclick="closeCart()">×</button></div>
-<div id="cartItems"></div>
-<div class="total"><span>Total</span><span id="total">0 MAD</span></div>
-<button class="btn" style="width:100%" onclick="openCheckout()">Commander</button>
-</div>
-</div>
+  <script>
+    const products = [
+      {id:1, name:"T-shirt Performance", price:300, cat:"hommes", tag:"BEST SELLER"},
+      {id:2, name:"Sweat Zippé Tech", price:300, cat:"hommes", tag:"NEW"},
+      {id:3, name:"Legging Sculpt", price:300, cat:"femmes", tag:"BEST SELLER"},
+      {id:4, name:"Short Training", price:300, cat:"hommes", tag:""},
+      {id:5, name:"Brassière Fit", price:300, cat:"femmes", tag:"NEW"},
+      {id:6, name:"Veste Sport", price:300, cat:"femmes", tag:""},
+      {id:7, name:"Sac ENZER Training", price:300, cat:"accessoires", tag:""},
+      {id:8, name:"Casquette Performance", price:300, cat:"accessoires", tag:"NEW"}
+    ];
 
-<div class="modal" id="checkout">
-<div class="overlay" onclick="closeCheckout()"></div>
-<div class="panel">
-<div class="panelHead"><h2>Finaliser la commande</h2><button class="close" onclick="closeCheckout()">×</button></div>
-<p class="muted" style="margin-bottom:20px">Paiement à la livraison — Maroc</p>
-<form class="form" onsubmit="submitOrder(event)">
-<label>Nom complet</label><input required id="name" placeholder="Votre nom">
-<label>Téléphone</label><input required id="phone" placeholder="+212 6XX XX XX XX">
-<label>Ville</label><input required id="city" placeholder="Rabat, Casablanca...">
-<label>Adresse</label><input required id="address" placeholder="Adresse de livraison">
-<label>Mode de paiement</label><select><option>Paiement à la livraison</option></select>
-<button class="btn" type="submit">Confirmer la commande</button>
-</form>
-<p id="success" style="display:none;text-align:center;margin-top:20px;color:var(--accent);font-weight:bold">Commande reçue ! Merci pour votre confiance.</p>
-</div>
-</div>
+    let cart = [];
 
-<script>
-const products=[
-{id:1,name:"T-shirt Performance",price:299,cat:"hommes",tag:"BEST SELLER"},
-{id:2,name:"Sweat Zippé Tech",price:449,cat:"hommes",tag:"NEW"},
-{id:3,name:"Legging Sculpt",price:349,cat:"femmes",tag:"BEST SELLER"},
-{id:4,name:"Short Training",price:249,cat:"hommes",tag:""},
-{id:5,name:"Brassière Fit",price:299,cat:"femmes",tag:"NEW"},
-{id:6,name:"Veste Sport",price:499,cat:"femmes",tag:""},
-{id:7,name:"Sac ENZER Training",price:299,cat:"accessoires",tag:""},
-{id:8,name:"Casquette Performance",price:199,cat:"accessoires",tag:"NEW"}
-];
-let cart=[];
-function renderProducts(list=products){
-const grid=document.getElementById('productGrid');
-grid.innerHTML=list.map(p=>`<article class="card"><div class="productImg">${p.tag?`<span class="tag">${p.tag}</span>`:""}</div><div class="info"><h3>${p.name}</h3><div class="price">${p.price} MAD</div><div class="stars">★★★★★</div><button class="btn" style="width:100%;margin-top:12px;padding:10px" onclick="addToCart(${p.id})">Ajouter au panier</button></div></article>`).join('');
-}
-function filterProducts(cat){
-let list=cat==='all'?products:products.filter(p=>p.cat===cat);
-renderProducts(list);document.getElementById('produits').scrollIntoView({behavior:'smooth'});
-}
-function addToCart(id){let p=products.find(x=>x.id===id);let item=cart.find(x=>x.id===id);item?item.qty++:cart.push({...p,qty:1});updateCart();openCart()}
-function updateCart(){
-document.getElementById('count').textContent=cart.reduce((s,x)=>s+x.qty,0);
-document.getElementById('cartItems').innerHTML=cart.length?cart.map(x=>`<div class="cartItem"><div><strong>${x.name}</strong><div class="muted">${x.price} MAD</div></div><div class="qty"><button onclick="changeQty(${x.id},-1)">−</button><span>${x.qty}</span><button onclick="changeQty(${x.id},1)">+</button></div></div>`).join(''):'<div class="empty">Votre panier est vide.</div>';
-document.getElementById('total').textContent=cart.reduce((s,x)=>s+x.price*x.qty,0)+' MAD';
-}
-function changeQty(id,d){let x=cart.find(x=>x.id===id);if(!x)return;x.qty+=d;if(x.qty<=0)cart=cart.filter(y=>y.id!==id);updateCart()}
-function openCart(){document.getElementById('cartPanel').style.display='block'}
-function closeCart(){document.getElementById('cartPanel').style.display='none'}
-function openCheckout(){if(!cart.length){alert('Votre panier est vide.');return}closeCart();document.getElementById('checkout').style.display='block'}
-function closeCheckout(){document.getElementById('checkout').style.display='none'}
-function submitOrder(e){e.preventDefault();document.getElementById('success').style.display='block';e.target.querySelectorAll('input,select,button').forEach(x=>x.disabled=true);cart=[];updateCart()}
-renderProducts();updateCart();
-</script>
+    function renderProducts(list = products) {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = list.map(p => `
+        <article class="card">
+          ${p.tag ? `<span class="tag">${p.tag}</span>` : ''}
+          <div class="productImg"></div>
+          <div class="info">
+            <div class="title">${p.name}</div>
+            <div class="price">${p.price} MAD</div>
+            <button class="buy-btn" onclick="addToCart(${p.id})">Ajouter au panier</button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function filterProducts(cat) {
+      let list = cat === 'all' ? products : products.filter(p => p.cat === cat);
+      renderProducts(list);
+    }
+
+    function addToCart(id) {
+      let p = products.find(x => x.id === id);
+      let item = cart.find(x => x.id === id);
+      if (item) { item.qty++; } else { cart.push({...p, qty: 1}); }
+      updateCart();
+      openCart();
+    }
+
+    function updateCart() {
+      document.getElementById('count').textContent = cart.reduce((s, x) => s + x.qty, 0);
+      document.getElementById('cartItems').innerHTML = cart.map(x => `
+        <div class="cartItem">
+          <div>
+            <strong>${x.name}</strong><br>
+            <small>${x.price} MAD x ${x.qty}</small>
+          </div>
+          <div>
+            <button onclick="changeQty(${x.id}, -1)">-</button>
+            <button onclick="changeQty(${x.id}, 1)">+</button>
+          </div>
+        </div>
+      `).join('');
+      document.getElementById('total').textContent = cart.reduce((s, x) => s + (x.price * x.qty), 0) + ' MAD';
+    }
+
+    function changeQty(id, d) {
+      let x = cart.find(x => x.id === id);
+      if (x) { x.qty += d; if (x.qty <= 0) cart = cart.filter(c => c.id !== id); }
+      updateCart();
+    }
+
+    function openCart() { document.getElementById('cartPanel').classList.add('open'); }
+    function closeCart() { document.getElementById('cartPanel').classList.remove('open'); }
+
+    function submitOrder(e) {
+      e.preventDefault();
+      if (cart.length === 0) { alert('Votre panier est vide.'); return; }
+      let details = cart.map(item => `${item.name} (x${item.qty}) - ${item.price * item.qty} MAD`).join('%0A');
+      let total = cart.reduce((s, x) => s + (x.price * x.qty), 0);
+      let message = `السلام عليكم، أريد طلب المنتجات التالية:%0A%0A${details}%0A%0Aالمجموع: ${total} MAD`;
+      window.open(`https://wa.me/212651814512?text=${message}`, '_blank');
+    }
+
+    renderProducts();
+  </script>
 </body>
 </html>
