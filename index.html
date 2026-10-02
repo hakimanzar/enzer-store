@@ -2336,3 +2336,191 @@ updateCart();
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENZER • Sport • Style • Move</title>
+  <meta name="description" content="ENZER - Vêtements de sport pour hommes et femmes. Sport, style et mouvement.">
+  <style>
+    :root { --black: #080808; --dark: #151515; --white: #f5f5f3; --muted: #a7a7a2; --line: #292929; --accent: #8bc39a; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--black); color: var(--white); line-height: 1.45; }
+    a { color: inherit; text-decoration: none; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(8,8,8,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    .topbar { background: #000; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; padding: 8px 16px; text-align: center; border-bottom: 1px solid var(--line); color: var(--muted); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1200px; margin: 0 auto; }
+    .logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+    .links { display: flex; gap: 20px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+    .links a:hover { color: var(--white); }
+    .cart-btn { background: var(--white); color: var(--black); border: none; padding: 8px 14px; font-weight: bold; cursor: pointer; border-radius: 20px; font-size: 12px; }
+    .hero { min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid var(--line); padding: 40px 20px; background: radial-gradient(circle at center, #1a1a1a 0%, #080808 100%); }
+    .hero h1 { font-size: clamp(36px, 8vw, 72px); font-weight: 900; text-transform: uppercase; letter-spacing: 2px; line-height: 1; margin-bottom: 16px; }
+    .hero p { color: var(--muted); max-width: 500px; margin: 0 auto 24px; font-size: 15px; }
+    .hero-btn { display: inline-block; background: var(--white); color: var(--black); font-weight: bold; padding: 12px 28px; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; border-radius: 2px; }
+    .products { max-width: 1200px; margin: 0 auto; padding: 60px 24px; }
+    .filters { display: flex; gap: 12px; margin-bottom: 30px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+    .filter-btn { background: none; border: none; color: var(--muted); font-size: 13px; text-transform: uppercase; cursor: pointer; padding: 4px 8px; }
+    .filter-btn.active, .filter-btn:hover { color: var(--white); font-weight: bold; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
+    .card { background: var(--dark); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; position: relative; }
+    .productImg { width: 100%; height: 280px; object-fit: cover; background: #222; }
+    .tag { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.8); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 4px 8px; border-radius: 2px; z-index: 2; }
+    .info { padding: 16px; display: flex; flex-direction: column; flex-grow: 1; }
+    .title { font-size: 14px; font-weight: bold; margin-bottom: 6px; }
+    .price { font-size: 15px; color: var(--muted); margin-bottom: 16px; }
+    .buy-btn { margin-top: auto; width: 100%; padding: 10px; background: transparent; color: var(--white); border: 1px solid var(--line); font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 12px; }
+    .buy-btn:hover { background: var(--white); color: var(--black); }
+    .cart-panel { position: fixed; top: 0; right: -400px; width: 100%; max-width: 360px; height: 100%; background: var(--dark); border-left: 1px solid var(--line); z-index: 100; transition: right 0.3s ease; padding: 24px; display: flex; flex-direction: column; }
+    .cart-panel.open { right: 0; }
+    .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 20px; }
+    .close-btn { background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; }
+    .cart-items { flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
+    .cartItem { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 8px; font-size: 13px; }
+    .cart-footer { border-top: 1px solid var(--line); padding-top: 16px; margin-top: 12px; }
+    .cart-total { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 16px; }
+    .checkout-btn { width: 100%; background: var(--white); color: var(--black); border: none; padding: 12px; font-weight: bold; text-transform: uppercase; cursor: pointer; }
+    footer { border-top: 1px solid var(--line); padding: 40px 24px; text-align: center; color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="topbar">Livraison partout au Maroc à partir de 50 MAD</div>
+    <div class="nav">
+      <div class="logo">ENZER</div>
+      <div class="links">
+        <a href="#produits">Accueil</a>
+        <a href="#produits">Homme</a>
+        <a href="#produits">Femme</a>
+      </div>
+      <button class="cart-btn" onclick="openCart()">Panier (<span id="count">0</span>)</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>SPORT. STYLE. MOVE.</h1>
+      <p>ENZER PERFORMANCE - Vêtements de sport pour hommes et femmes.</p>
+      <a href="#produits" class="hero-btn">Découvrir les produits</a>
+    </div>
+  </section>
+
+  <section class="products" id="produits">
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterProducts('all')">Tous</button>
+      <button class="filter-btn" onclick="filterProducts('hommes')">Homme</button>
+      <button class="filter-btn" onclick="filterProducts('femmes')">Femme</button>
+      <button class="filter-btn" onclick="filterProducts('accessoires')">Accessoires</button>
+    </div>
+    <div class="grid" id="productGrid"></div>
+  </section>
+
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>Votre Panier</h3>
+      <button class="close-btn" onclick="closeCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="total">0 MAD</span>
+      </div>
+      <button class="checkout-btn" onclick="submitOrder(event)">Commander via WhatsApp</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 ENZER Performance. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    const products = [
+      {id:1, name:"Maillot Performance Pro", price:300, cat:"hommes", tag:"NEW", img:"IMG_0106_3be9f0.jpeg"},
+      {id:2, name:"Maillot Tech Edition", price:300, cat:"hommes", tag:"", img:"IMG_0107_3be9f0.jpeg"},
+      {id:3, name:"Debardeur Training", price:300, cat:"hommes", tag:"BEST SELLER", img:"IMG_0101_3be9f0.jpeg"},
+      {id:4, name:"Veste Streetwear Vintage", price:300, cat:"hommes", tag:"NEW", img:"IMG_0103_3be9f0.jpeg"},
+      {id:5, name:"Short Sport Classic", price:300, cat:"hommes", tag:"", img:"IMG_0100_3be9f0.jpeg"}
+    ];
+
+    let cart = [];
+
+    function renderProducts(list = products) {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = list.map(p => `
+        <article class="card">
+          ${p.tag ? `<span class="tag">${p.tag}</span>` : ''}
+          <img src="${p.img}" class="productImg" alt="${p.name}">
+          <div class="info">
+            <div class="title">${p.name}</div>
+            <div class="price">${p.price} MAD</div>
+            <button class="buy-btn" onclick="addToCart(${p.id})">Ajouter au panier</button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function filterProducts(cat) {
+      let list = cat === 'all' ? products : products.filter(p => p.cat === cat);
+      renderProducts(list);
+    }
+
+    function addToCart(id) {
+      let p = products.find(x => x.id === id);
+      let item = cart.find(x => x.id === id);
+      if (item) { item.qty++; } else { cart.push({...p, qty: 1}); }
+      updateCard();
+      openCart();
+    }
+
+    // Fixed updateCart name reference
+    function updateCart() {
+      document.getElementById('count').textContent = cart.reduce((s, x) => s + x.qty, 0);
+      document.getElementById('cartItems').innerHTML = cart.map(x => `
+        <div class="cartItem">
+          <div>
+            <strong>${x.name}</strong><br>
+            <small>${x.price} MAD x ${x.qty}</small>
+          </div>
+          <div>
+            <button onclick="changeQty(${x.id}, -1)">-</button>
+            <button onclick="changeQty(${x.id}, 1)">+</button>
+          </div>
+        </div>
+      `).join('');
+      document.getElementById('total').textContent = cart.reduce((s, x) => s + (x.price * x.qty), 0) + ' MAD';
+    }
+
+    // Fix reference inside addToCart
+    function addToCart(id) {
+      let p = products.find(x => x.id === id);
+      let item = cart.find(x => x.id === id);
+      if (item) { item.qty++; } else { cart.push({...p, qty: 1}); }
+      updateCart();
+      openCart();
+    }
+
+    function changeQty(id, d) {
+      let x = cart.find(x => x.id === id);
+      if (x) { x.qty += d; if (x.qty <= 0) cart = cart.filter(c => c.id !== id); }
+      updateCart();
+    }
+
+    function openCart() { document.getElementById('cartPanel').classList.add('open'); }
+    function closeCart() { document.getElementById('cartPanel').classList.remove('open'); }
+
+    function submitOrder(e) {
+      e.preventDefault();
+      if (cart.length === 0) { alert('Votre panier est vide.'); return; }
+      let details = cart.map(item => `${item.name} (x${item.qty}) - ${item.price * item.qty} MAD`).join('%0A');
+      let total = cart.reduce((s, x) => s + (x.price * x.qty), 0);
+      let message = `السلام عليكم، أريد طلب المنتجات التالية:%0A%0A${details}%0A%0Aالمجموع: ${total} MAD`;
+      window.open(`https://wa.me/212651814512?text=${message}`, '_blank');
+    }
+
+    renderProducts();
+  </script>
+</body>
+</html>
