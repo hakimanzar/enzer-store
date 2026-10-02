@@ -57,7 +57,7 @@ header{ position:sticky; top:0; z-index:1000; background:rgba(5,5,5,0.92); backd
 .mobile-nav.open{ display:block; }
 .mobile-nav a{ display:block; padding:14px 0; border-bottom:1px solid var(--line); font-size:14px; font-weight:700; letter-spacing:1px; }
 
-/* HERO SECTION (مع صورة بصرية احترافية في الخلفية) */
+/* HERO SECTION */
 .hero{ min-height:85vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:80px 20px; position:relative; overflow:hidden; background: linear-gradient(rgba(5,5,5,0.75), rgba(5,5,5,0.85)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover; }
 .hero-content{ position:relative; z-index:2; max-width:750px; }
 .hero-label{ color:var(--green); font-size:12px; font-weight:900; letter-spacing:5px; margin-bottom:15px; text-transform:uppercase; }
@@ -67,7 +67,7 @@ header{ position:sticky; top:0; z-index:1000; background:rgba(5,5,5,0.92); backd
 .hero-btn{ display:inline-flex; align-items:center; gap:12px; padding:16px 35px; border-radius:30px; background:var(--green); color:#050505; font-weight:900; font-size:12px; letter-spacing:2px; text-transform:uppercase; transition:.2s; }
 .hero-btn:hover{ background:var(--green-hover); transform:translateY(-2px); }
 
-/* BRAND VALUES / FEATURES */
+/* FEATURES */
 .features{ max-width:1300px; margin:auto; padding:60px 30px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 .feature{ background:var(--card); border:1px solid var(--line); padding:28px; border-radius:16px; display:flex; gap:20px; align-items:center; }
 .feature-icon{ width:52px; height:52px; flex:none; display:flex; align-items:center; justify-content:center; background:rgba(139,195,154,0.1); border-radius:14px; color:var(--green); }
@@ -75,7 +75,7 @@ header{ position:sticky; top:0; z-index:1000; background:rgba(5,5,5,0.92); backd
 .feature h3{ font-size:15px; font-weight:800; margin-bottom:4px; }
 .feature p{ color:var(--muted); font-size:13px; }
 
-/* VISUAL EDITORIAL BANNER (صور بصرية مذهلة لإعطاء فخامة للمتجر) */
+/* EDITORIAL GRID */
 .editorial-grid{ max-width:1300px; margin:0 auto 50px; padding:0 30px; display:grid; grid-template-columns: 1fr 1fr; gap:20px; }
 .editorial-card{ height:380px; border-radius:16px; overflow:hidden; position:relative; border:1px solid var(--line); }
 .editorial-card img{ width:100%; height:100%; object-fit:cover; filter:brightness(0.75); transition:transform 0.6s ease; }
@@ -93,10 +93,10 @@ header{ position:sticky; top:0; z-index:1000; background:rgba(5,5,5,0.92); backd
 .filter{ border:1px solid var(--line); background:var(--dark2); color:#aaa; border-radius:30px; padding:10px 20px; font-size:12px; font-weight:800; transition:.2s; text-transform:uppercase; letter-spacing:1px; }
 .filter:hover, .filter.active{ background:var(--green); color:#000; border-color:var(--green); }
 
-.products-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.products-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
 .product-card{ background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; position:relative; transition:.3s; display:flex; flex-direction:column; }
 .product-card:hover{ transform:translateY(-6px); border-color:#444; }
-.product-image{ height:350px; background:#111; position:relative; overflow:hidden; }
+.product-image{ height:380px; background:#111; position:relative; overflow:hidden; }
 .product-image img{ width:100%; height:100%; object-fit:cover; display:block; transition:.5s; }
 .product-card:hover .product-image img{ transform:scale(1.05); }
 .product-tag{ position:absolute; top:14px; left:14px; background:var(--green); color:#000; padding:6px 10px; font-size:9px; font-weight:900; border-radius:4px; letter-spacing:1px; text-transform:uppercase; }
@@ -118,8 +118,6 @@ header{ position:sticky; top:0; z-index:1000; background:rgba(5,5,5,0.92); backd
 .add-btn{ border:0; background:var(--green); color:#000; }
 .add-btn:hover{ background:var(--green-hover); }
 
-.no-products{ grid-column:1/-1; text-align:center; padding:70px 20px; color:var(--muted); border:1px dashed var(--line); border-radius:16px; font-weight:700; }
-
 /* MODAL */
 .overlay{ display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:2000; backdrop-filter:blur(5px); }
 .overlay.show{ display:block; }
@@ -128,7 +126,7 @@ header{ position:sticky; top:0; z-index:1000; background:rgba(5,5,5,0.92); backd
 .modal-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
 .modal-head h3{ font-size:22px; font-weight:900; text-transform:uppercase; }
 .close-btn{ width:38px; height:38px; border:0; border-radius:50%; background:var(--line); color:white; font-size:18px; display:flex; align-items:center; justify-content:center; }
-.modal-image{ height:280px; border-radius:12px; overflow:hidden; margin-bottom:20px; background:#111; }
+.modal-image{ height:300px; border-radius:12px; overflow:hidden; margin-bottom:20px; background:#111; }
 .modal-image img{ width:100%; height:100%; object-fit:cover; }
 .option-title{ font-size:11px; color:var(--muted); margin:15px 0 8px; text-transform:uppercase; font-weight:800; letter-spacing:1px; }
 .options{ display:flex; flex-wrap:wrap; gap:8px; }
@@ -159,7 +157,7 @@ header{ position:sticky; top:0; z-index:1000; background:rgba(5,5,5,0.92); backd
 .total-row span:last-child{ color:var(--green); font-size:22px; font-weight:900; }
 .checkout{ width:100%; padding:16px; border:0; background:var(--green); color:#000; border-radius:10px; font-weight:900; font-size:13px; text-transform:uppercase; letter-spacing:1.5px; }
 
-/* TOAST NOTIFICATION */
+/* TOAST */
 .toast{ position:fixed; bottom:30px; left:50%; transform:translate(-50%,20px); background:var(--dark2); border:1px solid var(--line); padding:14px 24px; border-radius:10px; font-size:13px; font-weight:800; opacity:0; pointer-events:none; transition:.3s; z-index:5000; box-shadow:0 10px 30px rgba(0,0,0,0.5); }
 .toast.show{ opacity:1; transform:translate(-50%,0); }
 
@@ -171,20 +169,15 @@ footer{ border-top:1px solid var(--line); padding:60px 30px; background:#030303;
 .footer-text{ color:var(--muted); font-size:13px; max-width:380px; margin-top:10px; }
 .copyright{ color:#666; font-size:12px; font-weight:700; }
 
-/* RESPONSIVE */
 @media(max-width:1000px){
-  .products-grid{ grid-template-columns:repeat(3,1fr); }
+  .products-grid{ grid-template-columns:repeat(2,1fr); }
   .editorial-grid{ grid-template-columns:1fr; }
   .nav{ display:none; }
   .mobile-menu-btn{ display:flex; }
 }
-@media(max-width:760px){
+@media(max-width:600px){
+  .products-grid{ grid-template-columns:1fr; }
   .header-inner{ height:70px; padding:0 20px; }
-  .products-grid{ grid-template-columns:repeat(2,1fr); gap:12px; }
-  .product-image{ height:260px; }
-  .features{ grid-template-columns:1fr; padding:30px 20px; }
-  .footer-inner{ flex-direction:column; text-align:center; }
-  .footer-text{ margin:10px auto 0; }
 }
 </style>
 </head>
@@ -203,8 +196,7 @@ footer{ border-top:1px solid var(--line); padding:60px 30px; background:#030303;
 
     <nav class="nav">
       <a href="#produits" onclick="filterProducts('hommes');return true;">HOMME</a>
-      <a href="#produits" onclick="filterProducts('femmes');return true;">FEMME</a>
-      <a href="#produits" onclick="filterProducts('accessoires');return true;">ACCESSOIRES</a>
+      <a href="#produits" onclick="filterProducts('streetwear');return true;">STREETWEAR</a>
       <a href="#produits" onclick="filterProducts('all');return true;">COLLECTION</a>
     </nav>
 
@@ -232,7 +224,7 @@ footer{ border-top:1px solid var(--line); padding:60px 30px; background:#030303;
   <div class="search-panel" id="searchPanel">
     <div class="search-inner">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
-      <input type="text" id="searchInput" placeholder="Rechercher un maillot, t-shirt..." oninput="searchProducts(this.value)">
+      <input type="text" id="searchInput" placeholder="Rechercher..." oninput="searchProducts(this.value)">
       <button class="close-search" onclick="closeSearch()">×</button>
     </div>
   </div>
@@ -240,8 +232,7 @@ footer{ border-top:1px solid var(--line); padding:60px 30px; background:#030303;
   <!-- MOBILE NAV -->
   <div class="mobile-nav" id="mobileNav">
     <a href="#produits" onclick="mobileFilter('hommes')">HOMME</a>
-    <a href="#produits" onclick="mobileFilter('femmes')">FEMME</a>
-    <a href="#produits" onclick="mobileFilter('accessoires')">ACCESSOIRES</a>
+    <a href="#produits" onclick="mobileFilter('streetwear')">STREETWEAR</a>
     <a href="#produits" onclick="mobileFilter('all')">COLLECTION</a>
   </div>
 </header>
@@ -251,7 +242,7 @@ footer{ border-top:1px solid var(--line); padding:60px 30px; background:#030303;
   <div class="hero-content">
     <div class="hero-label">ENZER PERFORMANCE</div>
     <h1>SPORT. <span>STYLE.</span> MOVE.</h1>
-    <p>Des pièces sportives et streetwear pensées pour bouger, s'entraîner et affirmer ton style au quotidien.</p>
+    <p>Des pièces exclusives pensées pour l'entraînement et affirmant ton look au quotidien.</p>
     <a href="#produits" class="hero-btn">
       DÉCOUVRIR LA COLLECTION
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
@@ -262,51 +253,16 @@ footer{ border-top:1px solid var(--line); padding:60px 30px; background:#030303;
 <!-- FEATURES -->
 <section class="features">
   <div class="feature">
-    <div class="feature-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h11v11H3z"></path><path d="M14 10h4l3 3v4h-7z"></path><circle cx="7" cy="19" r="2"></circle><circle cx="18" cy="19" r="2"></circle></svg>
-    </div>
-    <div>
-      <h3>Livraison Rapide</h3>
-      <p>Partout au Maroc en 24h/48h.</p>
-    </div>
+    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h11v11H3z"></path><path d="M14 10h4l3 3v4h-7z"></path><circle cx="7" cy="19" r="2"></circle><circle cx="18" cy="19" r="2"></circle></svg></div>
+    <div><h3>Livraison Rapide</h3><p>Partout au Maroc en 24h/48h.</p></div>
   </div>
-
   <div class="feature">
-    <div class="feature-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path></svg>
-    </div>
-    <div>
-      <h3>Paiement à la livraison</h3>
-      <p>Payez en toute sécurité à la réception.</p>
-    </div>
+    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path></svg></div>
+    <div><h3>Paiement à la livraison</h3><p>Payez en toute sécurité à la réception.</p></div>
   </div>
-
   <div class="feature">
-    <div class="feature-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8 8 0 0 1-12.6 6.5L4 19l1.2-4A8 8 0 1 1 21 11.5Z"></path><path d="M8 9.5c.4 2 2.5 4.1 4.5 4.5"></path></svg>
-    </div>
-    <div>
-      <h3>Support Direct</h3>
-      <p>Assistance rapide via WhatsApp.</p>
-    </div>
-  </div>
-</section>
-
-<!-- EDITORIAL VISUAL BANNER (بانرات صور احترافية لتجميل المتجر) -->
-<section class="editorial-grid">
-  <div class="editorial-card">
-    <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1000&auto=format&fit=crop" alt="Training Sport">
-    <div class="editorial-content">
-      <span>HIGH PERFORMANCE</span>
-      <h3>Entraînement Intense</h3>
-    </div>
-  </div>
-  <div class="editorial-card">
-    <img src="https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?q=80&w=1000&auto=format&fit=crop" alt="Streetwear Style">
-    <div class="editorial-content">
-      <span>STREETWEAR</span>
-      <h3>Look Urbain & Casual</h3>
-    </div>
+    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8 8 0 0 1-12.6 6.5L4 19l1.2-4A8 8 0 1 1 21 11.5Z"></path><path d="M8 9.5c.4 2 2.5 4.1 4.5 4.5"></path></svg></div>
+    <div><h3>Support Direct</h3><p>Assistance rapide via WhatsApp.</p></div>
   </div>
 </section>
 
@@ -314,14 +270,13 @@ footer{ border-top:1px solid var(--line); padding:60px 30px; background:#030303;
 <section class="products-section" id="produits">
   <div class="section-head">
     <div>
-      <div class="section-label">CATALOGUE EXCLUSIF</div>
-      <h2>Nos Produits</h2>
+      <div class="section-label">NOUVELLE COLLECTION</div>
+      <h2>Catalogue Exclusif</h2>
     </div>
     <div class="filters">
       <button class="filter active" data-category="all" onclick="filterProducts('all',this)">TOUT</button>
       <button class="filter" data-category="hommes" onclick="filterProducts('hommes',this)">HOMME</button>
-      <button class="filter" data-category="femmes" onclick="filterProducts('femmes',this)">FEMME</button>
-      <button class="filter" data-category="accessoires" onclick="filterProducts('accessoires',this)">ACCESSOIRES</button>
+      <button class="filter" data-category="streetwear" onclick="filterProducts('streetwear',this)">STREETWEAR</button>
     </div>
   </div>
   <div class="products-grid" id="productsGrid"></div>
@@ -350,7 +305,6 @@ footer{ border-top:1px solid var(--line); padding:60px 30px; background:#030303;
   <div class="options" id="colorOptions">
     <button class="option selected" onclick="selectOption(this)">Noir</button>
     <button class="option" onclick="selectOption(this)">Blanc</button>
-    <button class="option" onclick="selectOption(this)">Vert</button>
   </div>
   <div class="option-title">Quantité</div>
   <div class="quantity">
@@ -392,12 +346,11 @@ footer{ border-top:1px solid var(--line); padding:60px 30px; background:#030303;
 </footer>
 
 <script>
+/* قائمة المنتجات بملفات الصور التي رفعتها */
 const products = [
-  { id: 1, name: "Maillot Performance Pro", price: 300, category: "hommes", tag: "NEW", image: "IMG_0106_3be9f0.jpeg" },
-  { id: 2, name: "Maillot Tech Edition", price: 300, category: "hommes", tag: "", image: "IMG_0107_3be9f0.jpeg" },
-  { id: 3, name: "Debardeur Training", price: 300, category: "hommes", tag: "BEST SELLER", image: "IMG_0101_3be9f0.jpeg" },
-  { id: 4, name: "Veste Streetwear Vintage", price: 300, category: "hommes", tag: "NEW", image: "IMG_0103_3be9f0.jpeg" },
-  { id: 5, name: "Short Sport Classic", price: 300, category: "hommes", tag: "", image: "IMG_0100_3be9f0.jpeg" }
+  { id: 1, name: "Débardeur Training Fit (Sur Modèle)", price: 300, category: "hommes", tag: "BEST SELLER", image: "DQTW6688.JPG" },
+  { id: 2, name: "Débardeur Training Classique", price: 300, category: "hommes", tag: "NEW", image: "CMQI7278.JPG" },
+  { id: 3, name: "Veste Denim Streetwear", price: 300, category: "streetwear", tag: "LIMITÉ", image: "FHIE8046.JPG" }
 ];
 
 let cart = JSON.parse(localStorage.getItem("enzer_cart") || "[]");
@@ -587,7 +540,7 @@ function updateCart() {
   } else {
     container.innerHTML = cart.map((item, index) => `
       <div class="cart-item">
-        <img src="${item.image}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600&auto=format&fit=crop'">
+        <img src="${item.image}" alt="${item.name}">
         <div>
           <h4>${item.name}</h4>
           <p>Taille: ${item.size} | Couleur: ${item.color}<br>Qté: ${item.quantity}</p>
