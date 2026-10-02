@@ -1,214 +1,2159 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ENZER • Sport • Style • Move</title>
-  <meta name="description" content="ENZER - Vêtements de sport et streetwear haut de gamme.">
-  <style>
-    :root { 
-      --black: #030303; 
-      --dark: #0d0d0d; 
-      --card-bg: #121212;
-      --white: #ffffff; 
-      --muted: #777772; 
-      --line: #1c1c1c; 
-      --border-light: #2b2b2b;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--black); color: var(--white); line-height: 1.6; letter-spacing: -0.01em; }
-    a { color: inherit; text-decoration: none; }
-    
-    /* Top Announcement Bar */
-    .topbar { background: #000; font-size: 10px; text-transform: uppercase; letter-spacing: 2.5px; padding: 10px 16px; text-align: center; border-bottom: 1px solid var(--line); color: var(--muted); font-weight: 600; }
-    
-    /* Navigation */
-    header { position: sticky; top: 0; z-index: 100; background: rgba(3,3,3,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 48px; max-width: 1400px; margin: 0 auto; }
-    .logo { font-size: 26px; font-weight: 900; letter-spacing: 5px; text-transform: uppercase; }
-    .links { display: flex; gap: 32px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); font-weight: 600; }
-    .links a:hover { color: var(--white); }
-    .cart-btn { background: var(--white); color: var(--black); border: none; padding: 10px 22px; font-weight: 700; cursor: pointer; border-radius: 30px; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; transition: all 0.2s; }
-    .cart-btn:hover { background: var(--muted); color: var(--white); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* Hero Section */
-    .hero { min-height: 82vh; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid var(--line); padding: 80px 20px; background: radial-gradient(circle at center, #151515 0%, var(--black) 100%); }
-    .hero h1 { font-size: clamp(40px, 8vw, 88px); font-weight: 900; text-transform: uppercase; letter-spacing: 6px; line-height: 1.05; margin-bottom: 20px; }
-    .hero p { color: var(--muted); max-width: 520px; margin: 0 auto 36px; font-size: 15px; letter-spacing: 0.5px; font-weight: 400; }
-    .hero-btn { display: inline-block; background: var(--white); color: var(--black); font-weight: 700; padding: 14px 36px; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; border-radius: 2px; transition: transform 0.2s; }
-    .hero-btn:hover { transform: translateY(-2px); }
+<title>ENZER — Sport • Style • Move</title>
 
-    /* Products Section */
-    .products { max-width: 1400px; margin: 0 auto; padding: 90px 48px; }
-    .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 30px; border-bottom: 1px solid var(--line); padding-bottom: 16px; }
-    .section-title { font-size: 14px; text-transform: uppercase; letter-spacing: 3px; font-weight: 800; }
-    
-    .filters { display: flex; gap: 12px; margin-bottom: 40px; overflow-x: auto; padding-bottom: 10px; }
-    .filter-btn { background: var(--dark); border: 1px solid var(--line); color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer; padding: 8px 18px; font-weight: 600; border-radius: 20px; transition: all 0.2s; white-space: nowrap; }
-    .filter-btn.active, .filter-btn:hover { background: var(--white); color: var(--black); border-color: var(--white); }
-    
-    /* Product Grid & Cards (Minimalist Luxury) */
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 32px; }
-    .card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; position: relative; transition: border-color 0.3s; }
-    .card:hover { border-color: var(--border-light); }
-    .productImg { width: 100%; height: 360px; object-fit: cover; background: #0a0a0a; }
-    .tag { position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.85); backdrop-filter: blur(6px); font-size: 9px; text-transform: uppercase; letter-spacing: 2px; padding: 6px 10px; border-radius: 2px; z-index: 2; font-weight: 700; border: 1px solid var(--line); color: var(--white); }
-    .info { padding: 22px; display: flex; flex-direction: column; flex-grow: 1; }
-    .title { font-size: 13px; font-weight: 700; margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }
-    .price { font-size: 14px; color: var(--muted); margin-bottom: 22px; font-weight: 600; letter-spacing: 0.5px; }
-    .buy-btn { margin-top: auto; width: 100%; padding: 12px; background: transparent; color: var(--white); border: 1px solid var(--white); font-weight: 700; cursor: pointer; text-transform: uppercase; font-size: 10px; letter-spacing: 2px; transition: all 0.2s; }
-    .buy-btn:hover { background: var(--white); color: var(--black); }
+<meta name="description"
+content="ENZER Performance — Vêtements de sport au Maroc.">
 
-    /* Cart Panel */
-    .cart-panel { position: fixed; top: 0; right: -420px; width: 100%; max-width: 380px; height: 100%; background: var(--dark); border-left: 1px solid var(--line); z-index: 1000; transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1); padding: 32px; display: flex; flex-direction: column; }
-    .cart-panel.open { right: 0; }
-    .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 20px; }
-    .cart-header h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; }
-    .close-btn { background: none; border: none; color: var(--muted); font-size: 24px; cursor: pointer; }
-    .cart-items { flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; }
-    .cartItem { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 14px; font-size: 12px; }
-    .cart-footer { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 16px; }
-    .cart-total { display: flex; justify-content: space-between; font-weight: 800; font-size: 14px; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; }
-    .checkout-btn { width: 100%; background: var(--white); color: var(--black); border: none; padding: 14px; font-weight: 800; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; font-size: 11px; transition: opacity 0.2s; }
-    .checkout-btn:hover { opacity: 0.9; }
-    .qty-btns { display: flex; gap: 10px; align-items: center; margin-top: 6px; }
-    .qty-btns button { background: var(--black); border: 1px solid var(--line); color: var(--white); width: 24px; height: 24px; cursor: pointer; font-weight: bold; border-radius: 2px; }
+<style>
+:root{
+  --black:#070707;
+  --dark:#0d0d0d;
+  --dark2:#141414;
+  --card:#111111;
+  --line:#252525;
+  --white:#ffffff;
+  --muted:#999;
+  --green:#8bc39a;
+  --green-dark:#6fae80;
+  --danger:#ff5d5d;
+}
 
-    /* Footer */
-    footer { border-top: 1px solid var(--line); padding: 60px 48px; text-align: center; color: var(--muted); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; background: #010101; }
-  </style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--black);
+  color:var(--white);
+  line-height:1.5;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* TOP BAR */
+
+.topbar{
+  background:var(--green);
+  color:#050505;
+  text-align:center;
+  padding:9px 15px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.4px;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(7,7,7,.95);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+
+.header-inner{
+  max-width:1250px;
+  margin:auto;
+  height:76px;
+  padding:0 25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.logo{
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:4px;
+}
+
+.logo span{
+  color:var(--green);
+}
+
+.nav{
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+.nav a{
+  font-size:13px;
+  font-weight:700;
+  color:#ddd;
+  transition:.25s;
+}
+
+.nav a:hover{
+  color:var(--green);
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.icon-btn{
+  width:42px;
+  height:42px;
+  border:1px solid var(--line);
+  background:transparent;
+  color:white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  transition:.25s;
+}
+
+.icon-btn:hover{
+  border-color:var(--green);
+  color:var(--green);
+  transform:translateY(-2px);
+}
+
+.icon-btn svg{
+  width:19px;
+  height:19px;
+  stroke:currentColor;
+}
+
+.cart-count{
+  position:absolute;
+  right:-3px;
+  top:-4px;
+  width:19px;
+  height:19px;
+  border-radius:50%;
+  background:var(--green);
+  color:#000;
+  font-size:10px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.mobile-menu-btn{
+  display:none;
+}
+
+/* SEARCH */
+
+.search-panel{
+  display:none;
+  position:absolute;
+  top:76px;
+  left:0;
+  width:100%;
+  background:#0b0b0b;
+  border-bottom:1px solid var(--line);
+  padding:18px 20px;
+}
+
+.search-panel.open{
+  display:block;
+}
+
+.search-inner{
+  max-width:700px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border:1px solid var(--line);
+  background:#121212;
+  padding:5px 8px 5px 16px;
+  border-radius:50px;
+}
+
+.search-inner svg{
+  width:20px;
+  color:var(--green);
+}
+
+.search-inner input{
+  flex:1;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:white;
+  padding:11px 5px;
+}
+
+.search-inner input::placeholder{
+  color:#777;
+}
+
+.close-search{
+  width:36px;
+  height:36px;
+  border:0;
+  border-radius:50%;
+  background:#222;
+  color:white;
+}
+
+/* MOBILE NAV */
+
+.mobile-nav{
+  display:none;
+  background:#0b0b0b;
+  border-top:1px solid var(--line);
+  padding:10px 20px 20px;
+}
+
+.mobile-nav.open{
+  display:block;
+}
+
+.mobile-nav a{
+  display:block;
+  padding:13px 5px;
+  border-bottom:1px solid #1d1d1d;
+  font-size:14px;
+  font-weight:700;
+}
+
+/* HERO */
+
+.hero{
+  min-height:570px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:70px 20px;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(139,195,154,.14),transparent 35%),
+    linear-gradient(135deg,#090909,#050505);
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  border:1px solid rgba(139,195,154,.08);
+  border-radius:50%;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+.hero-label{
+  color:var(--green);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:4px;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:clamp(45px,8vw,95px);
+  line-height:.9;
+  letter-spacing:-4px;
+  font-weight:950;
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--green);
+}
+
+.hero p{
+  color:#aaa;
+  margin:25px auto;
+  max-width:550px;
+  font-size:15px;
+}
+
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 25px;
+  border-radius:30px;
+  background:var(--green);
+  color:#050505;
+  font-weight:900;
+  font-size:13px;
+  transition:.25s;
+}
+
+.hero-btn:hover{
+  background:#a1d4ad;
+  transform:translateY(-2px);
+}
+
+/* FEATURES */
+
+.features{
+  max-width:1200px;
+  margin:auto;
+  padding:55px 20px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.feature{
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:25px;
+  border-radius:15px;
+  display:flex;
+  gap:17px;
+  align-items:center;
+}
+
+.feature-icon{
+  width:48px;
+  height:48px;
+  flex:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(139,195,154,.09);
+  border-radius:12px;
+  color:var(--green);
+}
+
+.feature-icon svg{
+  width:23px;
+  height:23px;
+  stroke:currentColor;
+}
+
+.feature h3{
+  font-size:14px;
+  margin-bottom:4px;
+}
+
+.feature p{
+  color:#888;
+  font-size:12px;
+}
+
+/* PRODUCTS */
+
+.products-section{
+  max-width:1250px;
+  margin:auto;
+  padding:45px 20px 90px;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:20px;
+  margin-bottom:30px;
+}
+
+.section-label{
+  color:var(--green);
+  font-size:11px;
+  letter-spacing:3px;
+  font-weight:900;
+}
+
+.section-head h2{
+  font-size:36px;
+  margin-top:5px;
+}
+
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.filter{
+  border:1px solid var(--line);
+  background:transparent;
+  color:#aaa;
+  border-radius:30px;
+  padding:9px 15px;
+  font-size:11px;
+  font-weight:800;
+  transition:.2s;
+}
+
+.filter:hover,
+.filter.active{
+  background:var(--green);
+  color:#000;
+  border-color:var(--green);
+}
+
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.product-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:15px;
+  overflow:hidden;
+  position:relative;
+  transition:.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-5px);
+  border-color:#3a3a3a;
+}
+
+.product-image{
+  height:320px;
+  background:#181818;
+  position:relative;
+  overflow:hidden;
+}
+
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.4s;
+}
+
+.product-card:hover .product-image img{
+  transform:scale(1.04);
+}
+
+.product-tag{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:var(--green);
+  color:#000;
+  padding:6px 9px;
+  font-size:9px;
+  font-weight:900;
+  border-radius:4px;
+  letter-spacing:.5px;
+}
+
+.favorite{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:37px;
+  height:37px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(0,0,0,.6);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+}
+
+.favorite svg{
+  width:17px;
+  height:17px;
+  stroke:currentColor;
+}
+
+.favorite.active{
+  color:var(--green);
+}
+
+.favorite.active svg{
+  fill:var(--green);
+}
+
+.product-info{
+  padding:17px;
+}
+
+.product-category{
+  color:#777;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.product-name{
+  font-size:14px;
+  font-weight:800;
+  margin:6px 0;
+}
+
+.product-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:14px;
+}
+
+.price{
+  font-size:16px;
+  font-weight:900;
+}
+
+.product-actions{
+  display:flex;
+  gap:6px;
+}
+
+.view-btn,
+.add-btn{
+  height:34px;
+  padding:0 11px;
+  border-radius:6px;
+  font-size:10px;
+  font-weight:900;
+}
+
+.view-btn{
+  border:1px solid var(--line);
+  background:transparent;
+  color:white;
+}
+
+.add-btn{
+  border:0;
+  background:var(--green);
+  color:#000;
+}
+
+.no-products{
+  grid-column:1/-1;
+  text-align:center;
+  padding:60px 20px;
+  color:#777;
+  border:1px dashed #292929;
+  border-radius:15px;
+}
+
+/* MODAL */
+
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  z-index:2000;
+}
+
+.overlay.show{
+  display:block;
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  z-index:2100;
+  width:min(500px,calc(100% - 30px));
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  background:#111;
+  border:1px solid #292929;
+  border-radius:18px;
+  padding:25px;
+}
+
+.modal.show{
+  display:block;
+}
+
+.modal-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.modal-head h3{
+  font-size:20px;
+}
+
+.close-btn{
+  width:36px;
+  height:36px;
+  border:0;
+  border-radius:50%;
+  background:#222;
+  color:white;
+}
+
+.modal-image{
+  height:260px;
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+
+.modal-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.option-title{
+  font-size:11px;
+  color:#888;
+  margin:15px 0 8px;
+  text-transform:uppercase;
+}
+
+.options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.option{
+  background:#191919;
+  border:1px solid #292929;
+  color:white;
+  padding:8px 13px;
+  border-radius:6px;
+  font-size:11px;
+}
+
+.option.selected{
+  border-color:var(--green);
+  color:var(--green);
+}
+
+.quantity{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.qty-btn{
+  width:34px;
+  height:34px;
+  border:1px solid #292929;
+  background:#191919;
+  color:white;
+  border-radius:6px;
+}
+
+.qty-number{
+  font-weight:900;
+}
+
+.modal-add{
+  width:100%;
+  margin-top:22px;
+  padding:14px;
+  border:0;
+  border-radius:8px;
+  background:var(--green);
+  color:#000;
+  font-weight:900;
+}
+
+/* CART */
+
+.cart-drawer{
+  position:fixed;
+  z-index:2200;
+  right:0;
+  top:0;
+  height:100vh;
+  width:min(430px,100%);
+  background:#0d0d0d;
+  border-left:1px solid #292929;
+  transform:translateX(100%);
+  transition:.3s;
+  display:flex;
+  flex-direction:column;
+}
+
+.cart-drawer.open{
+  transform:translateX(0);
+}
+
+.cart-head{
+  padding:20px;
+  border-bottom:1px solid #242424;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.cart-head h3{
+  font-size:18px;
+}
+
+.cart-items{
+  flex:1;
+  overflow:auto;
+  padding:15px;
+}
+
+.empty-cart{
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:12px;
+  color:#666;
+}
+
+.empty-cart svg{
+  width:45px;
+  height:45px;
+}
+
+.cart-item{
+  display:grid;
+  grid-template-columns:70px 1fr auto;
+  gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid #202020;
+}
+
+.cart-item img{
+  width:70px;
+  height:80px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+.cart-item h4{
+  font-size:12px;
+}
+
+.cart-item p{
+  color:#777;
+  font-size:10px;
+  margin-top:4px;
+}
+
+.cart-price{
+  color:var(--green);
+  font-weight:900;
+  font-size:12px;
+}
+
+.remove-item{
+  background:none;
+  border:0;
+  color:#777;
+}
+
+.cart-footer{
+  padding:20px;
+  border-top:1px solid #242424;
+}
+
+.total-row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+}
+
+.total-row span:last-child{
+  color:var(--green);
+  font-size:20px;
+  font-weight:900;
+}
+
+.checkout{
+  width:100%;
+  padding:14px;
+  border:0;
+  background:var(--green);
+  color:#000;
+  border-radius:8px;
+  font-weight:900;
+}
+
+/* TOAST */
+
+.toast{
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translate(-50%,20px);
+  background:#171717;
+  border:1px solid #333;
+  padding:12px 18px;
+  border-radius:8px;
+  font-size:12px;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:5000;
+}
+
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:45px 20px;
+  background:#050505;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.footer-logo{
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.footer-logo span{
+  color:var(--green);
+}
+
+.footer-text{
+  color:#777;
+  font-size:12px;
+  max-width:350px;
+  margin-top:10px;
+}
+
+.copyright{
+  color:#555;
+  font-size:11px;
+  align-self:end;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .products-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .nav{
+    gap:18px;
+  }
+}
+
+@media(max-width:760px){
+
+  .header-inner{
+    height:68px;
+    padding:0 15px;
+  }
+
+  .nav{
+    display:none;
+  }
+
+  .mobile-menu-btn{
+    display:flex;
+  }
+
+  .logo{
+    font-size:22px;
+  }
+
+  .header-actions{
+    margin-left:auto;
+  }
+
+  .hero{
+    min-height:500px;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+
+  .features{
+    grid-template-columns:1fr;
+    padding-top:35px;
+  }
+
+  .section-head{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .products-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .product-image{
+    height:250px;
+  }
+
+  .product-actions{
+    width:100%;
+    margin-top:8px;
+  }
+
+  .product-bottom{
+    display:block;
+  }
+
+  .view-btn,
+  .add-btn{
+    flex:1;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+  }
+
+  .copyright{
+    align-self:auto;
+  }
+}
+
+@media(max-width:450px){
+
+  .topbar{
+    font-size:10px;
+  }
+
+  .header-actions{
+    gap:4px;
+  }
+
+  .icon-btn{
+    width:36px;
+    height:36px;
+  }
+
+  .products-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .product-image{
+    height:210px;
+  }
+
+  .product-info{
+    padding:12px;
+  }
+
+  .product-name{
+    font-size:12px;
+  }
+
+  .price{
+    font-size:14px;
+  }
+
+  .view-btn,
+  .add-btn{
+    padding:0 6px;
+    font-size:9px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <div class="topbar">Livraison partout au Maroc • Paiement à la livraison</div>
-    <div class="nav">
-      <div class="logo">ENZER</div>
-      <div class="links">
-        <a href="#produits">Collection</a>
-        <a href="#produits">Homme</a>
-        <a href="#produits">Nouveautés</a>
-      </div>
-      <button class="cart-btn" onclick="openCart()">Panier (<span id="count">0</span>)</button>
-    </div>
-  </header>
+<!-- TOP BAR -->
+<div class="topbar">
+  LIVRAISON PARTOUT AU MAROC • PAIEMENT À LA LIVRAISON
+</div>
 
-  <section class="hero">
-    <div>
-      <h1>SPORT. STYLE. MOVE.</h1>
-      <p>More than just sportswear. Un design épuré, pensé pour le mouvement et l'exigence au quotidien.</p>
-      <a href="#produits" class="hero-btn">Explorer la collection</a>
-    </div>
-  </section>
+<!-- HEADER -->
+<header>
 
-  <section class="products" id="produits">
-    <div class="section-header">
-      <div class="section-title">Catalogue Exclusif</div>
-    </div>
-    <div class="filters">
-      <button class="filter-btn active" onclick="filterProducts('all')">Tous</button>
-      <button class="filter-btn" onclick="filterProducts('hommes')">Hommes</button>
-      <button class="filter-btn" onclick="filterProducts('accessoires')">Accessoires</button>
-    </div>
-    <div class="grid" id="productGrid"></div>
-  </section>
+  <div class="header-inner">
 
-  <div class="cart-panel" id="cartPanel">
-    <div class="cart-header">
-      <h3>Votre Panier</h3>
-      <button class="close-btn" onclick="closeCart()">×</button>
-    </div>
-    <div class="cart-items" id="cartItems"></div>
-    <div class="cart-footer">
-      <div class="cart-total">
-        <span>Total:</span>
-        <span id="total">0 MAD</span>
-      </div>
-      <button class="checkout-btn" onclick="submitOrder(event)">Commander via WhatsApp</button>
+    <a href="#" class="logo">
+      ENZ<span>ER</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#produits" onclick="filterProducts('hommes');return true;">HOMME</a>
+      <a href="#produits" onclick="filterProducts('femmes');return true;">FEMME</a>
+      <a href="#produits" onclick="filterProducts('accessoires');return true;">ACCESSOIRES</a>
+      <a href="#produits" onclick="filterProducts('all');return true;">COLLECTION</a>
+    </nav>
+
+    <div class="header-actions">
+
+      <!-- SEARCH -->
+      <button class="icon-btn" onclick="openSearch()" aria-label="Rechercher">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-4-4"></path>
+        </svg>
+      </button>
+
+      <!-- FAVORITES -->
+      <button class="icon-btn" onclick="showFavorites()" aria-label="Favoris">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M20.8 8.7c0 5.5-8.8 10.3-8.8 10.3S3.2 14.2 3.2 8.7A4.7 4.7 0 0 1 12 6.2a4.7 4.7 0 0 1 8.8 2.5Z"></path>
+        </svg>
+      </button>
+
+      <!-- CART -->
+      <button class="icon-btn" onclick="openCart()" aria-label="Panier">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 4h2l2.1 11.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20 7H6"></path>
+          <circle cx="9" cy="20" r="1"></circle>
+          <circle cx="18" cy="20" r="1"></circle>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+
+      <!-- MOBILE MENU -->
+      <button class="icon-btn mobile-menu-btn"
+              onclick="toggleMobileMenu()"
+              aria-label="Menu">
+
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+
+      </button>
+
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2026 ENZER Performance. All rights reserved.</p>
-  </footer>
+  <!-- SEARCH PANEL -->
+  <div class="search-panel" id="searchPanel">
+    <div class="search-inner">
 
-  <script>
-    const products = [
-      {id:1, name:"Maillot Performance Pro", price:300, cat:"hommes", tag:"NEW", img:"IMG_0106_3be9f0.jpeg"},
-      {id:2, name:"Maillot Tech Edition", price:300, cat:"hommes", tag:"", img:"IMG_0107_3be9f0.jpeg"},
-      {id:3, name:"Debardeur Training", price:300, cat:"hommes", tag:"BEST SELLER", img:"IMG_0101_3be9f0.jpeg"},
-      {id:4, name:"Veste Streetwear Vintage", price:300, cat:"hommes", tag:"NEW", img:"IMG_0103_3be9f0.jpeg"},
-      {id:5, name:"Short Sport Classic", price:300, cat:"hommes", tag:"", img:"IMG_0100_3be9f0.jpeg"}
-    ];
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m20 20-4-4"></path>
+      </svg>
 
-    let cart = [];
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Rechercher un produit..."
+        oninput="searchProducts(this.value)"
+      >
 
-    function renderProducts(list = products) {
-      const grid = document.getElementById('productGrid');
-      grid.innerHTML = list.map(p => `
-        <article class="card">
-          ${p.tag ? `<span class="tag">${p.tag}</span>` : ''}
-          <img src="${p.img}" class="productImg" alt="${p.name}">
-          <div class="info">
-            <div class="title">${p.name}</div>
-            <div class="price">${p.price} MAD</div>
-            <button class="buy-btn" onclick="addToCart(${p.id})">Ajouter au panier</button>
-          </div>
-        </article>
-      `).join('');
-    }
+      <button class="close-search" onclick="closeSearch()">×</button>
 
-    function filterProducts(cat) {
-      let list = cat === 'all' ? products : products.filter(p => p.cat === cat);
-      renderProducts(list);
-    }
+    </div>
+  </div>
 
-    function addToCart(id) {
-      let p = products.find(x => x.id === id);
-      let item = cart.find(x => x.id === id);
-      if (item) { item.qty++; } else { cart.push({...p, qty: 1}); }
-      updateCart();
-      openCart();
-    }
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
 
-    function updateCart() {
-      document.getElementById('count').textContent = cart.reduce((s, x) => s + x.qty, 0);
-      document.getElementById('cartItems').innerHTML = cart.map(x => `
-        <div class="cartItem">
-          <div>
-            <strong>${x.name}</strong><br>
-            <small style="color: var(--muted);">${x.price} MAD</small>
-            <div class="qty-btns">
-              <button onclick="changeQty(${x.id}, -1)">-</button>
-              <span>${x.qty}</span>
-              <button onclick="changeQty(${x.id}, 1)">+</button>
-            </div>
-          </div>
-          <div style="font-weight: bold; letter-spacing: 0.5px;">${x.price * x.qty} MAD</div>
+    <a href="#produits" onclick="mobileFilter('hommes')">HOMME</a>
+    <a href="#produits" onclick="mobileFilter('femmes')">FEMME</a>
+    <a href="#produits" onclick="mobileFilter('accessoires')">ACCESSOIRES</a>
+    <a href="#produits" onclick="mobileFilter('all')">COLLECTION</a>
+
+  </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-label">
+      ENZER PERFORMANCE
+    </div>
+
+    <h1>
+      SPORT.
+      <span>STYLE.</span>
+      MOVE.
+    </h1>
+
+    <p>
+      Des pièces sportives et streetwear pensées pour bouger,
+      s'entraîner et affirmer ton style.
+    </p>
+
+    <a href="#produits" class="hero-btn">
+      DÉCOUVRIR LA COLLECTION
+
+      <svg width="17" height="17" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14"></path>
+        <path d="m13 6 6 6-6 6"></path>
+      </svg>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+  <div class="feature">
+
+    <div class="feature-icon">
+      <svg viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.8">
+        <path d="M3 6h11v11H3z"></path>
+        <path d="M14 10h4l3 3v4h-7z"></path>
+        <circle cx="7" cy="19" r="2"></circle>
+        <circle cx="18" cy="19" r="2"></circle>
+      </svg>
+    </div>
+
+    <div>
+      <h3>Livraison partout au Maroc</h3>
+      <p>Recevez votre commande directement chez vous.</p>
+    </div>
+
+  </div>
+
+
+  <div class="feature">
+
+    <div class="feature-icon">
+      <svg viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.8">
+        <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+        <path d="M3 10h18"></path>
+      </svg>
+    </div>
+
+    <div>
+      <h3>Paiement à la livraison</h3>
+      <p>Payez simplement lorsque vous recevez.</p>
+    </div>
+
+  </div>
+
+
+  <div class="feature">
+
+    <div class="feature-icon">
+      <svg viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.8">
+        <path d="M21 11.5a8 8 0 0 1-12.6 6.5L4 19l1.2-4A8 8 0 1 1 21 11.5Z"></path>
+        <path d="M8 9.5c.4 2 2.5 4.1 4.5 4.5"></path>
+      </svg>
+    </div>
+
+    <div>
+      <h3>Support WhatsApp</h3>
+      <p>Une question ? Contactez-nous directement.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section class="products-section" id="produits">
+
+  <div class="section-head">
+
+    <div>
+      <div class="section-label">ENZER SHOP</div>
+      <h2>Notre collection</h2>
+    </div>
+
+    <div class="filters">
+
+      <button
+        class="filter active"
+        data-category="all"
+        onclick="filterProducts('all',this)">
+        TOUT
+      </button>
+
+      <button
+        class="filter"
+        data-category="hommes"
+        onclick="filterProducts('hommes',this)">
+        HOMME
+      </button>
+
+      <button
+        class="filter"
+        data-category="femmes"
+        onclick="filterProducts('femmes',this)">
+        FEMME
+      </button>
+
+      <button
+        class="filter"
+        data-category="accessoires"
+        onclick="filterProducts('accessoires',this)">
+        ACCESSOIRES
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="products-grid" id="productsGrid"></div>
+
+</section>
+
+
+<!-- OVERLAY -->
+
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+
+<!-- PRODUCT MODAL -->
+
+<div class="modal" id="productModal">
+
+  <div class="modal-head">
+
+    <h3 id="modalTitle">Produit</h3>
+
+    <button class="close-btn" onclick="closeModal()">×</button>
+
+  </div>
+
+  <div class="modal-image">
+    <img id="modalImage" src="" alt="">
+  </div>
+
+  <div class="option-title">Taille</div>
+
+  <div class="options" id="sizeOptions">
+
+    <button class="option selected" onclick="selectOption(this)">
+      S
+    </button>
+
+    <button class="option" onclick="selectOption(this)">
+      M
+    </button>
+
+    <button class="option" onclick="selectOption(this)">
+      L
+    </button>
+
+    <button class="option" onclick="selectOption(this)">
+      XL
+    </button>
+
+  </div>
+
+
+  <div class="option-title">Couleur</div>
+
+  <div class="options" id="colorOptions">
+
+    <button class="option selected" onclick="selectOption(this)">
+      Noir
+    </button>
+
+    <button class="option" onclick="selectOption(this)">
+      Blanc
+    </button>
+
+    <button class="option" onclick="selectOption(this)">
+      Vert
+    </button>
+
+  </div>
+
+
+  <div class="option-title">Quantité</div>
+
+  <div class="quantity">
+
+    <button class="qty-btn" onclick="changeQty(-1)">−</button>
+
+    <span class="qty-number" id="qtyNumber">1</span>
+
+    <button class="qty-btn" onclick="changeQty(1)">+</button>
+
+  </div>
+
+
+  <button class="modal-add" onclick="addFromModal()">
+    AJOUTER AU PANIER
+  </button>
+
+</div>
+
+
+<!-- CART -->
+
+<aside class="cart-drawer" id="cartDrawer">
+
+  <div class="cart-head">
+
+    <h3>Votre panier</h3>
+
+    <button class="close-btn" onclick="closeCart()">×</button>
+
+  </div>
+
+  <div class="cart-items" id="cartItems"></div>
+
+  <div class="cart-footer">
+
+    <div class="total-row">
+      <span>Total</span>
+      <span id="cartTotal">0 MAD</span>
+    </div>
+
+    <button class="checkout" onclick="checkoutWhatsApp()">
+      COMMANDER VIA WHATSAPP
+    </button>
+
+  </div>
+
+</aside>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+
+      <div class="footer-logo">
+        ENZ<span>ER</span>
+      </div>
+
+      <p class="footer-text">
+        Sport • Style • Move.<br>
+        Collection sportive et streetwear au Maroc.
+      </p>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 ENZER. Tous droits réservés.
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   PRODUCTS
+========================= */
+
+const products = [
+
+  {
+    id:1,
+    name:"Maillot Performance Pro",
+    price:300,
+    category:"hommes",
+    tag:"NEW",
+    image:"IMG_0106_3be9f0.jpeg"
+  },
+
+  {
+    id:2,
+    name:"Maillot Tech Edition",
+    price:200,
+    category:"hommes",
+    tag:"",
+    image:"IMG_0107_3be9f0.jpeg"
+  },
+
+  {
+    id:3,
+    name:"Debardeur Training",
+    price:99,
+    category:"hommes",
+    tag:"BEST SELLER",
+    image:"IMG_0101_3be9f0.jpeg"
+  },
+
+  {
+    id:4,
+    name:"Veste Streetwear Vintage",
+    price:150,
+    category:"hommes",
+    tag:"NEW",
+    image:"IMG_0103_3be9f0.jpeg"
+  },
+
+  {
+    id:5,
+    name:"Short Sport Classic",
+    price:250,
+    category:"hommes",
+    tag:"",
+    image:"IMG_0100_3be9f0.jpeg"
+  }
+
+];
+
+
+/* =========================
+   STATE
+========================= */
+
+let cart = JSON.parse(localStorage.getItem("enzer_cart") || "[]");
+
+let favorites =
+  JSON.parse(localStorage.getItem("enzer_favorites") || "[]");
+
+let currentProduct = null;
+let currentQty = 1;
+
+
+/* =========================
+   RENDER PRODUCTS
+========================= */
+
+function renderProducts(list = products){
+
+  const grid = document.getElementById("productsGrid");
+
+  if(!list.length){
+
+    grid.innerHTML = `
+      <div class="no-products">
+        Aucun produit trouvé.
+      </div>
+    `;
+
+    return;
+  }
+
+  grid.innerHTML = list.map(product => {
+
+    const isFavorite = favorites.includes(product.id);
+
+    return `
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <img
+            src="${product.image}"
+            alt="${product.name}"
+            onerror="this.style.display='none'"
+          >
+
+          ${
+            product.tag
+            ? `<div class="product-tag">${product.tag}</div>`
+            : ""
+          }
+
+          <button
+            class="favorite ${isFavorite ? "active" : ""}"
+            onclick="toggleFavorite(${product.id},this)"
+            aria-label="Favoris">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8">
+
+              <path d="M20.8 8.7c0 5.5-8.8 10.3-8.8 10.3S3.2 14.2 3.2 8.7A4.7 4.7 0 0 1 12 6.2a4.7 4.7 0 0 1 8.8 2.5Z"></path>
+
+            </svg>
+
+          </button>
+
         </div>
-      `).join('');
-      document.getElementById('total').textContent = cart.reduce((s, x) => s + (x.price * x.qty), 0) + ' MAD';
+
+
+        <div class="product-info">
+
+          <div class="product-category">
+            ${product.category}
+          </div>
+
+          <div class="product-name">
+            ${product.name}
+          </div>
+
+          <div class="product-bottom">
+
+            <div class="price">
+              ${product.price} MAD
+            </div>
+
+            <div class="product-actions">
+
+              <button
+                class="view-btn"
+                onclick="openProduct(${product.id})">
+                VOIR
+              </button>
+
+              <button
+                class="add-btn"
+                onclick="quickAdd(${product.id})">
+                + PANIER
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    `;
+
+  }).join("");
+
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+function filterProducts(category, button){
+
+  document.querySelectorAll(".filter")
+    .forEach(btn => btn.classList.remove("active"));
+
+  if(button){
+    button.classList.add("active");
+  }else{
+
+    const target =
+      document.querySelector(
+        `.filter[data-category="${category}"]`
+      );
+
+    if(target){
+      target.classList.add("active");
     }
 
-    function changeQty(id, d) {
-      let x = cart.find(x => x.id === id);
-      if (x) { x.qty += d; if (x.qty <= 0) cart = cart.filter(c => c.id !== id); }
-      updateCart();
-    }
+  }
 
-    function openCart() { document.getElementById('cartPanel').classList.add('open'); }
-    function closeCart() { document.getElementById('cartPanel').classList.remove('open'); }
+  if(category === "all"){
+    renderProducts(products);
+  }else{
+    renderProducts(
+      products.filter(
+        product => product.category === category
+      )
+    );
+  }
 
-    function submitOrder(e) {
-      e.preventDefault();
-      if (cart.length === 0) { alert('Votre panier est vide.'); return; }
-      let details = cart.map(item => `${item.name} (x${item.qty}) - ${item.price * item.qty} MAD`).join('%0A');
-      let total = cart.reduce((s, x) => s + (x.price * x.qty), 0);
-      let message = `السلام عليكم، أريد طلب المنتجات التالية:%0A%0A${details}%0A%0Aالمجموع: ${total} MAD`;
-      window.open(`https://wa.me/212651814512?text=${message}`, '_blank');
-    }
+}
 
-    renderProducts();
-  </script>
+
+/* =========================
+   MOBILE FILTER
+========================= */
+
+function mobileFilter(category){
+
+  document.getElementById("mobileNav")
+    .classList.remove("open");
+
+  filterProducts(category);
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function openSearch(){
+
+  document
+    .getElementById("searchPanel")
+    .classList.add("open");
+
+  setTimeout(() => {
+    document
+      .getElementById("searchInput")
+      .focus();
+  },100);
+
+}
+
+function closeSearch(){
+
+  document
+    .getElementById("searchPanel")
+    .classList.remove("open");
+
+}
+
+function searchProducts(value){
+
+  const query =
+    value.trim().toLowerCase();
+
+  if(!query){
+
+    renderProducts(products);
+
+    return;
+  }
+
+  const result =
+    products.filter(product =>
+      product.name
+        .toLowerCase()
+        .includes(query)
+    );
+
+  renderProducts(result);
+
+}
+
+
+/* =========================
+   FAVORITES
+========================= */
+
+function toggleFavorite(id, button){
+
+  if(favorites.includes(id)){
+
+    favorites =
+      favorites.filter(item => item !== id);
+
+    button.classList.remove("active");
+
+    showToast("Produit retiré des favoris");
+
+  }else{
+
+    favorites.push(id);
+
+    button.classList.add("active");
+
+    showToast("Produit ajouté aux favoris");
+
+  }
+
+  localStorage.setItem(
+    "enzer_favorites",
+    JSON.stringify(favorites)
+  );
+
+}
+
+
+function showFavorites(){
+
+  const favoriteProducts =
+    products.filter(product =>
+      favorites.includes(product.id)
+    );
+
+  if(!favoriteProducts.length){
+
+    showToast("Aucun favori pour le moment");
+
+    return;
+  }
+
+  renderProducts(favoriteProducts);
+
+  document
+    .getElementById("produits")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* =========================
+   PRODUCT MODAL
+========================= */
+
+function openProduct(id){
+
+  currentProduct =
+    products.find(product => product.id === id);
+
+  currentQty = 1;
+
+  document.getElementById("qtyNumber").textContent = 1;
+
+  document.getElementById("modalTitle").textContent =
+    currentProduct.name;
+
+  document.getElementById("modalImage").src =
+    currentProduct.image;
+
+  document
+    .getElementById("productModal")
+    .classList.add("show");
+
+  document
+    .getElementById("overlay")
+    .classList.add("show");
+
+}
+
+
+function closeModal(){
+
+  document
+    .getElementById("productModal")
+    .classList.remove("show");
+
+  document
+    .getElementById("overlay")
+    .classList.remove("show");
+
+}
+
+
+function selectOption(button){
+
+  button
+    .parentElement
+    .querySelectorAll(".option")
+    .forEach(option =>
+      option.classList.remove("selected")
+    );
+
+  button.classList.add("selected");
+
+}
+
+
+function changeQty(value){
+
+  currentQty += value;
+
+  if(currentQty < 1){
+    currentQty = 1;
+  }
+
+  if(currentQty > 20){
+    currentQty = 20;
+  }
+
+  document.getElementById("qtyNumber").textContent =
+    currentQty;
+
+}
+
+
+/* =========================
+   ADD CART
+========================= */
+
+function quickAdd(id){
+
+  const product =
+    products.find(product => product.id === id);
+
+  addToCart(
+    product,
+    "M",
+    "Noir",
+    1
+  );
+
+}
+
+
+function addFromModal(){
+
+  if(!currentProduct) return;
+
+  const size =
+    document.querySelector(
+      "#sizeOptions .selected"
+    )?.textContent.trim() || "M";
+
+  const color =
+    document.querySelector(
+      "#colorOptions .selected"
+    )?.textContent.trim() || "Noir";
+
+  addToCart(
+    currentProduct,
+    size,
+    color,
+    currentQty
+  );
+
+  closeModal();
+
+}
+
+
+function addToCart(product,size,color,quantity){
+
+  const existing =
+    cart.find(item =>
+      item.id === product.id &&
+      item.size === size &&
+      item.color === color
+    );
+
+  if(existing){
+
+    existing.quantity += quantity;
+
+  }else{
+
+    cart.push({
+      id:product.id,
+      name:product.name,
+      price:product.price,
+      image:product.image,
+      size:size,
+      color:color,
+      quantity:quantity
+    });
+
+  }
+
+  saveCart();
+
+  updateCart();
+
+  showToast("Produit ajouté au panier");
+
+}
+
+
+/* =========================
+   CART
+========================= */
+
+function saveCart(){
+
+  localStorage.setItem(
+    "enzer_cart",
+    JSON.stringify(cart)
+  );
+
+}
+
+
+function updateCart(){
+
+  const count =
+    cart.reduce(
+      (total,item) =>
+        total + item.quantity,
+      0
+    );
+
+  document.getElementById("cartCount")
+    .textContent = count;
+
+
+  const container =
+    document.getElementById("cartItems");
+
+  if(!cart.length){
+
+    container.innerHTML = `
+
+      <div class="empty-cart">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5">
+
+          <path d="M3 4h2l2.1 11.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20 7H6"></path>
+
+          <circle cx="9" cy="20" r="1"></circle>
+
+          <circle cx="18" cy="20" r="1"></circle>
+
+        </svg>
+
+        <span>Votre panier est vide</span>
+
+      </div>
+
+    `;
+
+  }else{
+
+    container.innerHTML =
+      cart.map((item,index) => `
+
+        <div class="cart-item">
+
+          <img
+            src="${item.image}"
+            alt="${item.name}"
+          >
+
+          <div>
+
+            <h4>${item.name}</h4>
+
+            <p>
+              Taille: ${item.size}<br>
+              Couleur: ${item.color}<br>
+              Quantité: ${item.quantity}
+            </p>
+
+            <div class="cart-price">
+              ${item.price * item.quantity} MAD
+            </div>
+
+          </div>
+
+          <button
+            class="remove-item"
+            onclick="removeCartItem(${index})">
+
+            ×
+
+          </button>
+
+        </div>
+
+      `).join("");
+
+  }
+
+
+  const total =
+    cart.reduce(
+      (sum,item) =>
+        sum + item.price * item.quantity,
+      0
+    );
+
+  document.getElementById("cartTotal")
+    .textContent =
+      total.toLocaleString("fr-MA") + " MAD";
+
+}
+
+
+function removeCartItem(index){
+
+  cart.splice(index,1);
+
+  saveCart();
+
+  updateCart();
+
+  showToast("Produit supprimé");
+
+}
+
+
+function openCart(){
+
+  updateCart();
+
+  document
+    .getElementById("cartDrawer")
+    .classList.add("open");
+
+  document
+    .getElementById("overlay")
+    .classList.add("show");
+
+}
+
+
+function closeCart(){
+
+  document
+    .getElementById("cartDrawer")
+    .classList.remove("open");
+
+  document
+    .getElementById("overlay")
+    .classList.remove("show");
+
+}
+
+
+/* =========================
+   WHATSAPP ORDER
+========================= */
+
+function checkoutWhatsApp(){
+
+  if(!cart.length){
+
+    showToast("Votre panier est vide");
+
+    return;
+  }
+
+
+  let message =
+    "Bonjour ENZER, je souhaite passer une commande:%0A%0A";
+
+
+  cart.forEach((item,index) => {
+
+    message +=
+      `${index + 1}. ${item.name}%0A` +
+      `Taille: ${item.size}%0A` +
+      `Couleur: ${item.color}%0A` +
+      `Quantité: ${item.quantity}%0A` +
+      `Prix: ${item.price * item.quantity} MAD%0A%0A`;
+
+  });
+
+
+  const total =
+    cart.reduce(
+      (sum,item) =>
+        sum + item.price * item.quantity,
+      0
+    );
+
+
+  message +=
+    `TOTAL: ${total} MAD%0A%0A` +
+
+    `Nom:%0A` +
+    `Ville:%0A` +
+    `Adresse:%0A` +
+    `Téléphone:`;
+
+
+  window.open(
+    `https://wa.me/212651814512?text=${message}`,
+    "_blank"
+  );
+
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMobileMenu(){
+
+  document
+    .getElementById("mobileNav")
+    .classList.toggle("open");
+
+}
+
+
+/* =========================
+   CLOSE ALL
+========================= */
+
+function closeAll(){
+
+  closeModal();
+
+  closeCart();
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+let toastTimer;
+
+function showToast(message){
+
+  const toast =
+    document.getElementById("toast");
+
+  toast.textContent = message;
+
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer =
+    setTimeout(() => {
+
+      toast.classList.remove("show");
+
+    },2200);
+
+}
+
+
+/* =========================
+   INIT
+========================= */
+
+renderProducts();
+
+updateCart();
+
+</script>
+
 </body>
 </html>
