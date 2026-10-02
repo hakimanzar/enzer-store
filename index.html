@@ -4,72 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ENZER • Sport • Style • Move</title>
-  <meta name="description" content="ENZER - Vêtements de sport pour hommes et femmes. Sport, style et mouvement.">
+  <meta name="description" content="ENZER - Vêtements de sport et streetwear haut de gamme. Sport, style et mouvement.">
   <style>
     :root { 
-      --black: #0b0b0b; 
-      --dark: #141414; 
-      --card-bg: #1a1a1a;
-      --white: #f8f8f6; 
-      --muted: #9e9e99; 
-      --line: #2d2d2a; 
-      --accent: #ffffff; 
+      --black: #060606; 
+      --dark: #111111; 
+      --card-bg: #161616;
+      --white: #ffffff; 
+      --muted: #888884; 
+      --line: #222222; 
+      --border-light: #2c2c2c;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--black); color: var(--white); line-height: 1.5; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--black); color: var(--white); line-height: 1.5; letter-spacing: -0.01em; }
     a { color: inherit; text-decoration: none; }
     
-    /* Header & Nav */
-    header { position: sticky; top: 0; z-index: 100; background: rgba(11,11,11,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-    .topbar { background: #000; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; padding: 8px 16px; text-align: center; border-bottom: 1px solid var(--line); color: var(--muted); }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; max-width: 1300px; margin: 0 auto; }
-    .logo { font-size: 26px; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; }
-    .links { display: flex; gap: 24px; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); font-weight: 600; }
+    /* Top Announcement Bar */
+    .topbar { background: #000; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; padding: 10px 16px; text-align: center; border-bottom: 1px solid var(--line); color: var(--muted); font-weight: 600; }
+    
+    /* Navigation */
+    header { position: sticky; top: 0; z-index: 100; background: rgba(6,6,6,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; max-width: 1400px; margin: 0 auto; }
+    .logo { font-size: 28px; font-weight: 900; letter-spacing: 4px; text-transform: uppercase; }
+    .links { display: flex; gap: 30px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); font-weight: 600; }
     .links a:hover { color: var(--white); }
-    .cart-btn { background: var(--white); color: var(--black); border: none; padding: 10px 18px; font-weight: 700; cursor: pointer; border-radius: 30px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; transition: opacity 0.2s; }
-    .cart-btn:hover { opacity: 0.9; }
+    .cart-btn { background: var(--white); color: var(--black); border: none; padding: 10px 20px; font-weight: 700; cursor: pointer; border-radius: 20px; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; transition: all 0.2s; }
+    .cart-btn:hover { background: var(--muted); color: var(--white); }
 
     /* Hero Section */
-    .hero { min-height: 75vh; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid var(--line); padding: 60px 20px; background: linear-gradient(180deg, rgba(20,20,20,0.5) 0%, rgba(11,11,11,1) 100%); }
-    .hero h1 { font-size: clamp(38px, 7vw, 76px); font-weight: 900; text-transform: uppercase; letter-spacing: 3px; line-height: 1.1; margin-bottom: 16px; }
-    .hero p { color: var(--muted); max-width: 550px; margin: 0 auto 30px; font-size: 16px; letter-spacing: 0.5px; }
-    .hero-btn { display: inline-block; background: var(--white); color: var(--black); font-weight: 700; padding: 14px 32px; text-transform: uppercase; letter-spacing: 1.5px; font-size: 12px; border-radius: 2px; transition: transform 0.2s; }
+    .hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid var(--line); padding: 80px 20px; background: radial-gradient(circle at center, #181818 0%, var(--black) 100%); }
+    .hero h1 { font-size: clamp(42px, 8vw, 84px); font-weight: 900; text-transform: uppercase; letter-spacing: 4px; line-height: 1.05; margin-bottom: 20px; }
+    .hero p { color: var(--muted); max-width: 500px; margin: 0 auto 32px; font-size: 15px; letter-spacing: 0.5px; font-weight: 400; }
+    .hero-btn { display: inline-block; background: var(--white); color: var(--black); font-weight: 700; padding: 14px 34px; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; border-radius: 2px; transition: transform 0.2s; }
     .hero-btn:hover { transform: translateY(-2px); }
 
     /* Products Section */
-    .products { max-width: 1300px; margin: 0 auto; padding: 80px 32px; }
-    .section-title { font-size: 20px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 800; }
-    .filters { display: flex; gap: 16px; margin-bottom: 40px; border-bottom: 1px solid var(--line); padding-bottom: 16px; overflow-x: auto; }
-    .filter-btn { background: none; border: none; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; padding: 6px 12px; font-weight: 600; white-space: nowrap; }
-    .filter-btn.active, .filter-btn:hover { color: var(--white); border-bottom: 2px solid var(--white); }
+    .products { max-width: 1400px; margin: 0 auto; padding: 80px 40px; }
+    .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 30px; border-bottom: 1px solid var(--line); padding-bottom: 16px; }
+    .section-title { font-size: 16px; text-transform: uppercase; letter-spacing: 3px; font-weight: 800; }
     
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px; }
-    .card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; position: relative; transition: border-color 0.2s; }
-    .card:hover { border-color: var(--muted); }
-    .productImg { width: 100%; height: 320px; object-fit: cover; background: #111; }
-    .tag { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.85); backdrop-filter: blur(4px); font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; padding: 5px 10px; border-radius: 3px; z-index: 2; font-weight: 700; border: 1px solid var(--line); }
+    .filters { display: flex; gap: 12px; margin-bottom: 40px; overflow-x: auto; padding-bottom: 10px; }
+    .filter-btn { background: var(--dark); border: 1px solid var(--line); color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer; padding: 8px 16px; font-weight: 600; border-radius: 20px; transition: all 0.2s; white-space: nowrap; }
+    .filter-btn.active, .filter-btn:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+    
+    /* Product Grid & Cards (Luxury Minimalist Style) */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+    .card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; position: relative; transition: border-color 0.3s; }
+    .card:hover { border-color: var(--border-light); }
+    .productImg { width: 100%; height: 350px; object-fit: cover; background: #0f0f0f; }
+    .tag { position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.85); backdrop-filter: blur(6px); font-size: 9px; text-transform: uppercase; letter-spacing: 2px; padding: 6px 10px; border-radius: 2px; z-index: 2; font-weight: 700; border: 1px solid var(--line); color: var(--white); }
     .info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-    .title { font-size: 14px; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px; }
-    .price { font-size: 15px; color: var(--muted); margin-bottom: 20px; font-weight: 600; }
-    .buy-btn { margin-top: auto; width: 100%; padding: 12px; background: transparent; color: var(--white); border: 1px solid var(--white); font-weight: 700; cursor: pointer; text-transform: uppercase; font-size: 11px; letter-spacing: 1.5px; transition: all 0.2s; }
+    .title { font-size: 13px; font-weight: 700; margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }
+    .price { font-size: 14px; color: var(--muted); margin-bottom: 20px; font-weight: 600; letter-spacing: 0.5px; }
+    .buy-btn { margin-top: auto; width: 100%; padding: 12px; background: transparent; color: var(--white); border: 1px solid var(--white); font-weight: 700; cursor: pointer; text-transform: uppercase; font-size: 10px; letter-spacing: 2px; transition: all 0.2s; }
     .buy-btn:hover { background: var(--white); color: var(--black); }
 
     /* Cart Panel */
-    .cart-panel { position: fixed; top: 0; right: -420px; width: 100%; max-width: 380px; height: 100%; background: var(--dark); border-left: 1px solid var(--line); z-index: 1000; transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1); padding: 30px; display: flex; flex-direction: column; }
+    .cart-panel { position: fixed; top: 0; right: -420px; width: 100%; max-width: 380px; height: 100%; background: var(--dark); border-left: 1px solid var(--line); z-index: 1000; transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1); padding: 30px; display: flex; flex-direction: column; }
     .cart-panel.open { right: 0; }
     .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 20px; }
-    .cart-header h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; }
+    .cart-header h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; }
     .close-btn { background: none; border: none; color: var(--muted); font-size: 24px; cursor: pointer; }
     .cart-items { flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; }
-    .cartItem { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 12px; font-size: 13px; }
+    .cartItem { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 14px; font-size: 12px; }
     .cart-footer { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 16px; }
-    .cart-total { display: flex; justify-content: space-between; font-weight: 800; font-size: 15px; margin-bottom: 20px; letter-spacing: 0.5px; }
-    .checkout-btn { width: 100%; background: var(--white); color: var(--black); border: none; padding: 14px; font-weight: 800; text-transform: uppercase; cursor: pointer; letter-spacing: 1.5px; font-size: 12px; }
-    .qty-btns { display: flex; gap: 8px; align-items: center; margin-top: 4px; }
-    .qty-btns button { background: var(--card-bg); border: 1px solid var(--line); color: var(--white); width: 22px; height: 22px; cursor: pointer; font-weight: bold; }
+    .cart-total { display: flex; justify-content: space-between; font-weight: 800; font-size: 14px; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; }
+    .checkout-btn { width: 100%; background: var(--white); color: var(--black); border: none; padding: 14px; font-weight: 800; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; font-size: 11px; transition: opacity 0.2s; }
+    .checkout-btn:hover { opacity: 0.9; }
+    .qty-btns { display: flex; gap: 10px; align-items: center; margin-top: 6px; }
+    .qty-btns button { background: var(--black); border: 1px solid var(--line); color: var(--white); width: 24px; height: 24px; cursor: pointer; font-weight: bold; border-radius: 2px; }
 
     /* Footer */
-    footer { border-top: 1px solid var(--line); padding: 50px 32px; text-align: center; color: var(--muted); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+    footer { border-top: 1px solid var(--line); padding: 60px 40px; text-align: center; color: var(--muted); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; background: #030303; }
   </style>
 </head>
 <body>
@@ -80,8 +86,8 @@
       <div class="logo">ENZER</div>
       <div class="links">
         <a href="#produits">Collection</a>
-        <a href="#produits">Performance</a>
-        <a href="#produits">Streetwear</a>
+        <a href="#produits">Homme</a>
+        <a href="#produits">Nouveautés</a>
       </div>
       <button class="cart-btn" onclick="openCart()">Panier (<span id="count">0</span>)</button>
     </div>
@@ -90,17 +96,18 @@
   <section class="hero">
     <div>
       <h1>SPORT. STYLE. MOVE.</h1>
-      <p>Conçu pour le mouvement, la performance et le style au quotidien.</p>
-      <a href="#produits" class="hero-btn">Découvrir la collection</a>
+      <p>More than just sportswear. Un design épuré, pensé pour le mouvement et l'exigence au quotidien.</p>
+      <a href="#produits" class="hero-btn">Explorer la collection</a>
     </div>
   </section>
 
   <section class="products" id="produits">
-    <div class="section-title">Sélection Exclusive</div>
+    <div class="section-header">
+      <div class="section-title">Catalogue Exclusif</div>
+    </div>
     <div class="filters">
       <button class="filter-btn active" onclick="filterProducts('all')">Tous</button>
-      <button class="filter-btn" onclick="filterProducts('hommes')">Homme</button>
-      <button class="filter-btn" onclick="filterProducts('femmes')">Femme</button>
+      <button class="filter-btn" onclick="filterProducts('hommes')">Hommes</button>
       <button class="filter-btn" onclick="filterProducts('accessoires')">Accessoires</button>
     </div>
     <div class="grid" id="productGrid"></div>
@@ -122,7 +129,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2026 ENZER Performance. Tous droits réservés.</p>
+    <p>&copy; 2026 ENZER Performance. All rights reserved.</p>
   </footer>
 
   <script>
@@ -170,14 +177,14 @@
         <div class="cartItem">
           <div>
             <strong>${x.name}</strong><br>
-            <small style="color: #9e9e99;">${x.price} MAD</small>
+            <small style="color: var(--muted);">${x.price} MAD</small>
             <div class="qty-btns">
               <button onclick="changeQty(${x.id}, -1)">-</button>
               <span>${x.qty}</span>
               <button onclick="changeQty(${x.id}, 1)">+</button>
             </div>
           </div>
-          <div style="font-weight: bold;">${x.price * x.qty} MAD</div>
+          <div style="font-weight: bold; letter-spacing: 0.5px;">${x.price * x.qty} MAD</div>
         </div>
       `).join('');
       document.getElementById('total').textContent = cart.reduce((s, x) => s + (x.price * x.qty), 0) + ' MAD';
